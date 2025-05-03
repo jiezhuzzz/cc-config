@@ -14,12 +14,14 @@
     bat
     fd
     uv
+    cmake
     lazydocker
     podman-tui
     bottom
     jaq
     ripgrep
     procs
+    alejandra
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
