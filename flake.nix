@@ -11,28 +11,42 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    darwin = {
+      url = "github:nix-darwin/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
     nixvim,
+    darwin,
     ...
   }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    makeHomeConfig = host:
+    makeServerConfig = server:
       home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
         modules = [
           nixvim.homeManagerModules.nixvim
-          ./hosts/${host}.nix
+          ./servers/${server}.nix
           ./home.nix
         ];
       };
-    hosts = ["cc" "goku" "vegeta"];
+    servers = ["cc" "goku" "vegeta"];
   in {
-    homeConfigurations = nixpkgs.lib.genAttrs hosts (host: makeHomeConfig host);
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    homeConfigurations = nixpkgs.lib.genAttrs servers (server: makeServerConfig server);
+    darwinConfigurations."mac" = darwin.lib.darwinSystem {
+      modules = [
+        ./darwin
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.jie = ./home.nix;
+        }
+      ];
+    };
+    # formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };
 }

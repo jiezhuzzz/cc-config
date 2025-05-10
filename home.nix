@@ -71,5 +71,7 @@
     ./apps/gitui.nix
     ./apps/fzf.nix
     ./apps/nixvim
-  ];
+  ] ++ (if config.system == "aarch64-darwin" then [
+    ./apps/ghostty.nix
+  ] else []);
 }
