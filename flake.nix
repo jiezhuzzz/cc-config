@@ -14,6 +14,10 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs @ {
     self,
@@ -22,6 +26,7 @@
     home-manager,
     nixvim,
     darwin,
+    disko,
     ...
   }: let
     # Common functions
