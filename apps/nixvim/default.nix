@@ -1,5 +1,5 @@
 {
-  programs.nixvim = {
+  nixvim = {
     enable = true;
 
     colorschemes.catppuccin.enable = true;

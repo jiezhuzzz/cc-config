@@ -53,7 +53,7 @@
         macbook = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
-            ./hosts/macbook/darwin-configuration.nix
+            ./darwin.nix
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -64,34 +64,21 @@
         };
       };
 
-      homeConfigurations = {
-        server1 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {system = "x86_64-linux";};
-          modules = [
-            ./hosts/server1/home.nix
-            ./home-manager/shared.nix
-          ];
-          username = "yourusername";
-          homeDirectory = "/home/yourusername";
-        };
-        server2 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {system = "x86_64-linux";};
-          modules = [
-            ./hosts/server2/home.nix
-            ./home-manager/shared.nix
-          ];
-          username = "yourusername";
-          homeDirectory = "/home/yourusername";
-        };
-        server3 = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {system = "x86_64-linux";};
-          modules = [
-            ./hosts/server3/home.nix
-            ./home-manager/shared.nix
-          ];
-          username = "yourusername";
-          homeDirectory = "/home/yourusername";
-        };
+      homeConfigurations = let
+        mkServerConfig = username: homeDir:
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs {system = "x86_64-linux";};
+            modules = [
+              ./home.nix
+            ];
+            extraSpecialArgs = {
+              inherit username homeDir;
+            };
+          };
+      in {
+        cc = mkServerConfig "cc" "/home/cc";
+        goku = mkServerConfig "jiezzz" "/zp_goku/scratch_sb/jiezzz";
+        vegeta = mkServerConfig "jiezzz" "/zp_vegeta/scratch_sb/jiezzz";
       };
     };
 }

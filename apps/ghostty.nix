@@ -3,5 +3,5 @@
     enable = true;
     enableZshIntegration = true;
     installVimSyntax = true;
-  }
+  };
 }
