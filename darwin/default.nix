@@ -1,10 +1,14 @@
-{
-  self,
-  pkgs,
-  ...
-}
+{pkgs, ...}
 : {
-  system.configurationRevision = self.rev or self.dirtyRev or null;
-  system.stateVersion = 6;
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  security.pam.services.sudo_local.touchIdAuth = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    # hostPlatform = "aarch64-darwin";
+  };
+  imports = [
+    ./system.nix
+    ./fonts.nix
+    ./homebrew.nix
+    ../apps/aerospace.nix
+  ];
 }
