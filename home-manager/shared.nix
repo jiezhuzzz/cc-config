@@ -1,13 +1,4 @@
-{
-  pkgs,
-  username,
-  homeDir,
-  ...
-}: {
-  home.username = username;
-
-  home.homeDirectory = homeDir;
-
+{pkgs, ...}: {
   home.stateVersion = "25.05";
 
   home.preferXdgDirectories = true;
@@ -60,8 +51,6 @@
   };
 
   programs.home-manager.enable = true;
-
-  services.podman.enable = true;
 
   imports = [
     ../apps/direnv.nix
