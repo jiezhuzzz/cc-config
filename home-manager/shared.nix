@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  username,
+  homeDir,
+  ...
+}: {
+  home.username = username;
+
+  home.homeDirectory = homeDir;
+
   home.stateVersion = "25.05";
 
   home.preferXdgDirectories = true;
@@ -55,16 +64,15 @@
   services.podman.enable = true;
 
   imports = [
-    ./apps/direnv.nix
-    ./apps/eza.nix
-    # ./apps/bash.nix
-    ./apps/zsh.nix
-    ./apps/oh-my-posh.nix
-    ./apps/atuin.nix
-    ./apps/tmux.nix
-    ./apps/yazi.nix
-    ./apps/git.nix
-    ./apps/gitui.nix
-    ./apps/fzf.nix
+    ../apps/direnv.nix
+    ../apps/eza.nix
+    ../apps/zsh.nix
+    ../apps/oh-my-posh.nix
+    ../apps/atuin.nix
+    ../apps/tmux.nix
+    ../apps/yazi.nix
+    ../apps/git.nix
+    ../apps/gitui.nix
+    ../apps/fzf.nix
   ];
 }
