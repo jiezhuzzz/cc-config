@@ -34,34 +34,40 @@
       }
     )
     // {
-      nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/desktop/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.jie = import ./home-manager/shared.nix;
-            }
-          ];
-        };
+      nixosConfigurations = let
+        mkNixosConfig = username: homeDir:
+          nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [
+              ./hosts/desktop/configuration.nix
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.${username} = import ./home-manager/nixos.nix;
+              }
+            ];
+          };
+      in {
+        steamer = mkNixosConfig "jie" "/home/jie";
       };
 
-      darwinConfigurations = {
-        macbook = darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          modules = [
-            ./darwin.nix
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.jie = import ./home-manager/shared.nix;
-            }
-          ];
-        };
+      darwinConfigurations = let
+        mkDarwinConfig = username: homeDir:
+          darwin.lib.darwinSystem {
+            system = "aarch64-darwin";
+            modules = [
+              ./darwin
+              home-manager.darwinModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.${username} = import ./home-manager/darwin.nix;
+              }
+            ];
+          };
+      in {
+        mac = mkDarwinConfig "jie" "/Users/jie";
       };
 
       homeConfigurations = let
@@ -69,7 +75,7 @@
           home-manager.lib.homeManagerConfiguration {
             pkgs = import nixpkgs {system = "x86_64-linux";};
             modules = [
-              ./home.nix
+              ./home-manager/shared.nix
             ];
             extraSpecialArgs = {
               inherit username homeDir;
