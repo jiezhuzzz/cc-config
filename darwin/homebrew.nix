@@ -29,6 +29,7 @@
       "adguard"
       "hazel"
       "openinterminal"
+      "nx-studio"
     ];
     masApps = {
       "WeChat" = 836500024;
