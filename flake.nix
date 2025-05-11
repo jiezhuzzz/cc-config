@@ -53,10 +53,16 @@
       };
 
       darwinConfigurations = let
-        mkDarwinConfig = username: homeDir:
+        mkDarwinConfig = username:
           darwin.lib.darwinSystem {
             system = "aarch64-darwin";
             modules = [
+              {
+                users.users.${username} = {
+                  name = username;
+                  home = "/Users/${username}";
+                };
+              }
               ./darwin
               home-manager.darwinModules.home-manager
               {
@@ -65,9 +71,12 @@
                 home-manager.users.${username} = import ./home-manager/darwin.nix;
               }
             ];
+            specialArgs = {
+              inherit self;
+            };
           };
       in {
-        mac = mkDarwinConfig "jie" "/Users/jie";
+        mac = mkDarwinConfig "jie";
       };
 
       homeConfigurations = let
