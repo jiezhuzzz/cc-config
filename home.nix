@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.stateVersion = "25.05";
 
   home.preferXdgDirectories = true;
@@ -70,8 +66,5 @@
     ./apps/git.nix
     ./apps/gitui.nix
     ./apps/fzf.nix
-    ./apps/nixvim
-  ] ++ (if config.system == "aarch64-darwin" then [
-    ./apps/ghostty.nix
-  ] else []);
+  ];
 }
