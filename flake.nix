@@ -62,12 +62,14 @@
             system.configurationRevision = self.rev or self.dirtyRev or null;
           }
           ./darwin
-          nixvim.nixDarwinModules.nixvim
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home-manager/darwin.nix;
+            home-manager.users.${username}.imports = [
+              nixvim.homeManagerModules.nixvim
+              ./home-manager/darwin.nix
+            ];
           }
         ];
       };
@@ -76,6 +78,7 @@
       home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
+          nixvim.homeManagerModules.nixvim
           ./home-manager/server.nix
         ];
         extraSpecialArgs = {

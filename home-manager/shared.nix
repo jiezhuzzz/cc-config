@@ -64,5 +64,6 @@
     ../apps/gitui.nix
     ../apps/fzf.nix
     ../apps/helix.nix
+    ../apps/nixvim
   ];
 }
