@@ -30,6 +30,8 @@
       "hazel"
       "openinterminal"
       "nx-studio"
+      "notion-calendar"
+      "notion-mail"
     ];
     masApps = {
       "WeChat" = 836500024;
