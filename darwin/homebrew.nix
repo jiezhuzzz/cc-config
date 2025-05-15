@@ -43,7 +43,7 @@
       "Endel" = 1346247457;
       "Bear" = 1091189122;
       "Obsidian Web Clipper" = 6720708363;
-      "AdGuard for Safari" = 1440147259;
+      # "AdGuard for Safari" = 1440147259;
       "1Password for Safari" = 1569813296;
       "Momentum" = 1564329434;
       "Raycast Companion" = 6738274497;

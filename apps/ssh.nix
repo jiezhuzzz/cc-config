@@ -9,6 +9,9 @@ in {
       Host *
           IdentityAgent ${onePassPath}
     '';
+    includes = [
+      "./cc-config"
+    ];
     matchBlocks = {
       "uchicago" = {
         hostname = "linux.cs.uchicago.edu";
