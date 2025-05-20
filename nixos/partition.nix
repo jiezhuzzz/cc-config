@@ -8,7 +8,7 @@
           type = "gpt";
           partitions = {
             ESP = {
-              size = "500M";
+              size = "512M";
               type = "EF00";
               content = {
                 type = "filesystem";
@@ -49,11 +49,11 @@
         type = "lvm_vg";
         lvs = {
           base = {
-            size = "100%";
+            size = "100%FREE";
             lvm_type = "thin-pool";
           };
           root = {
-            size = "2T";
+            size = "100%FREE";
             lvm_type = "thinlv";
             pool = "base";
             content = {
@@ -63,16 +63,6 @@
               mountOptions = [
                 "defaults"
               ];
-            };
-          };
-          home = {
-            size = "remaining";
-            lvm_type = "thinlv";
-            pool = "base";
-            content = {
-              type = "filesystem";
-              format = "xfs";
-              mountpoint = "/home";
             };
           };
         };
