@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    inputs.vscode-server.url = "github:nix-community/nixos-vscode-server";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,11 +31,12 @@
     ...
   }: let
     # Common functions
-    mkNixosConfig = username: homeDir:
+    mkNixosConfig = username:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/desktop/configuration.nix
+          ./nixos/configuration.nix
+          vscode-server.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

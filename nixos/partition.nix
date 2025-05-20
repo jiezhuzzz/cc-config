@@ -48,14 +48,8 @@
       pool = {
         type = "lvm_vg";
         lvs = {
-          base = {
-            size = "100%FREE";
-            lvm_type = "thin-pool";
-          };
           root = {
             size = "100%FREE";
-            lvm_type = "thinlv";
-            pool = "base";
             content = {
               type = "filesystem";
               format = "xfs";
