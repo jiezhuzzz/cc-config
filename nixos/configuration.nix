@@ -40,6 +40,13 @@
   };
   services.xserver.videoDrivers = ["nvidia"];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    source-han-sans
+  ];
+
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
