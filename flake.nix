@@ -36,7 +36,8 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./nixos/configuration.nix
+          ./nixos
+          disko.nixosModules.disko
           vscode-server.nixosModules.default
           home-manager.nixosModules.home-manager
           {
