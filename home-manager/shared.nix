@@ -10,7 +10,6 @@
     bat
     fd
     uv
-    cmake
     lazydocker
     podman-tui
     bottom
@@ -19,6 +18,8 @@
     procs
     alejandra
     codex
+    curlie
+    scc
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
