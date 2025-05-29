@@ -39,6 +39,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    ZVM_INIT_MODE = "sourcing";
   };
 
   home.shellAliases = {
@@ -59,7 +60,6 @@
     ../apps/eza.nix
     ../apps/zsh.nix
     ../apps/oh-my-posh.nix
-    ../apps/atuin.nix
     ../apps/tmux.nix
     ../apps/yazi.nix
     ../apps/git.nix
