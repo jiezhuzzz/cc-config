@@ -7,6 +7,7 @@
       "zsh-users/zsh-completions"
       "zsh-users/zsh-syntax-highlighting"
       "jeffreytse/zsh-vi-mode"
+      "Aloxaf/fzf-tab"
     ];
   };
 }
