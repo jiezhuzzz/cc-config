@@ -56,7 +56,10 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.deviceSection = ''
+    Option "TearFree" "False"
+    Option "VariableRefresh" "True"
+  '';
 
   nixpkgs.config.allowUnfree = true;
 
