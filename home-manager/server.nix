@@ -11,7 +11,7 @@
   # Server specific packages
   home.packages = with pkgs; [
     codeql
-    nvtop
+    nvtopPackages.nvidia
   ];
 
   imports = [
