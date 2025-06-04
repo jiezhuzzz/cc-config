@@ -4,10 +4,7 @@
   ...
 }: {
   services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.graphics = {
-    enable = true;
-  };
+  hardware.graphics.enable = true;
 
   hardware.nvidia = {
     # Modesetting is required.
