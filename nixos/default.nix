@@ -29,6 +29,7 @@
   nixpkgs.config.allowUnfree = true;
 
   services.vscode-server.enable = true;
+  programs.nix-ld.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";

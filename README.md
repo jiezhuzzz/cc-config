@@ -17,3 +17,4 @@ sudo chsh -s $(which zsh) cc
 ## References
 
 - [My Nix Journey - Use Nix on Ubuntu](https://tech.aufomm.com/my-nix-journey-use-nix-with-ubuntu/#Install-Nix)
+- [Installing NixOS with Flakes and LVM on LUKS](https://jadarma.github.io/blog/posts/2024/08/installing-nixos-with-flakes-and-lvm-on-luks/)
