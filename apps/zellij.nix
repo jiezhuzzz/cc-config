@@ -7,6 +7,6 @@
     exitShellOnExit = true;
     settings = {
       theme = "nord";
-    }
+    };
   };
 }
