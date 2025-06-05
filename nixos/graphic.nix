@@ -4,7 +4,7 @@
   ...
 }: {
   services.xserver.videoDrivers = ["nvidia"];
-  services.desktopManager.gnome.enable = true;
+  
   hardware.graphics.enable = true;
 
   hardware.nvidia = {
