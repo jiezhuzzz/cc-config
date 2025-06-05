@@ -11,8 +11,10 @@
               size = "512M";
               type = "EF00";
               content = {
-                type = "mdraid";
-                name = "boot";
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = ["umask=0077"];
               };
             };
             primary = {
@@ -31,14 +33,14 @@
         content = {
           type = "gpt";
           partitions = {
-            boot = {
-              size = "512M";
-              type = "EF00";
-              content = {
-                type = "mdraid";
-                name = "boot";
-              };
-            };
+            # boot = {
+            #   size = "512M";
+            #   type = "EF00";
+            #   content = {
+            #     type = "mdraid";
+            #     name = "boot";
+            #   };
+            # };
             primary = {
               size = "100%";
               content = {
@@ -50,19 +52,19 @@
         };
       };
     };
-    mdadm = {
-      boot = {
-        type = "mdadm";
-        level = 1;
-        metadata = "1.0";
-        content = {
-          type = "filesystem";
-          format = "vfat";
-          mountpoint = "/boot";
-          mountOptions = ["umask=0077"];
-        };
-      };
-    };
+    # mdadm = {
+    #   boot = {
+    #     type = "mdadm";
+    #     level = 1;
+    #     metadata = "1.0";
+    #     content = {
+    #       type = "filesystem";
+    #       format = "vfat";
+    #       mountpoint = "/boot";
+    #       mountOptions = ["umask=0077"];
+    #     };
+    #   };
+    # };
     lvm_vg = {
       pool = {
         type = "lvm_vg";
