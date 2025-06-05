@@ -3,7 +3,7 @@
   services.greetd = {
     enable = true;
     settings.default_session = {
-      user = "steamos";
+      user = "jie";
       command = "steam-gamescope > /dev/null 2>&1";
     };
   };
