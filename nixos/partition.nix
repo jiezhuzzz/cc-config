@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk = {
-      one = {
+      zero = {
         type = "disk";
         device = "/dev/nvme0n1";
         content = {
@@ -25,7 +25,7 @@
           };
         };
       };
-      two = {
+      one = {
         type = "disk";
         device = "/dev/nvme1n1";
         content = {
