@@ -6,8 +6,8 @@
     powerOnBoot = true;
     settings = {
       General = {
-        MultiProfile     = "multiple";
-        FastConnectable  = true;
+        MultiProfile = "multiple";
+        FastConnectable = true;
       };
     };
   };

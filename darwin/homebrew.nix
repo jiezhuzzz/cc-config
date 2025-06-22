@@ -14,7 +14,7 @@
       "kekaexternalhelper"
       "iina"
       "lunar"
-      "zen-browser"
+      "zen"
       "zoom"
       "zotero"
       "homerow"
