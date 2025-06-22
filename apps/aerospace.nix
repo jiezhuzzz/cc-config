@@ -39,11 +39,11 @@
             "alt-shift-l" = "move right";
             "alt-shift-minus" = "resize smart -50";
             "alt-shift-equal" = "resize smart +50";
-            "alt-a" = "workspace A";
+            "alt-w" = "workspace W";
             "alt-c" = "workspace C";
             "alt-t" = "workspace T";
             "alt-o" = "workspace O";
-            "alt-shift-a" = "move-node-to-workspace A";
+            "alt-shift-w" = "move-node-to-workspace W";
             "alt-shift-c" = "move-node-to-workspace C";
             "alt-shift-t" = "move-node-to-workspace T";
             "alt-shift-o" = "move-node-to-workspace O";
@@ -71,7 +71,19 @@
       on-window-detected = [
         {
           "if".app-id = "company.thebrowser.Browser";
-          run = "move-node-to-workspace A";
+          run = "move-node-to-workspace W";
+        }
+        {
+          "if".app-id = "app.zen-browser.zen";
+          run = "move-node-to-workspace W";
+        }
+        {
+          "if".app-id = "com.apple.Safari";
+          run = "move-node-to-workspace W";
+        }
+        {
+          "if".app-id = "org.zotero.zotero";
+          run = "move-node-to-workspace W";
         }
         {
           "if".app-id = "com.mitchellh.ghostty";
@@ -84,10 +96,6 @@
         {
           "if".app-id = "md.obsidian";
           run = "move-node-to-workspace O";
-        }
-        {
-          "if".app-id = "org.zotero.zotero";
-          run = "move-node-to-workspace A";
         }
         {
           check-further-callbacks = true;
