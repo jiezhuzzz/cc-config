@@ -40,8 +40,8 @@
       "Pixelmator Pro" = 1289583905;
       "Infuse" = 1136220934;
       "Amphetamine" = 937984704;
-      "Endel" = 1346247457;
-      "Bear" = 1091189122;
+      # "Endel" = 1346247457;
+      # "Bear" = 1091189122;
       "Obsidian Web Clipper" = 6720708363;
       # "AdGuard for Safari" = 1440147259;
       "1Password for Safari" = 1569813296;
