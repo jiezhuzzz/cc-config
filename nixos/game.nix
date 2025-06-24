@@ -19,4 +19,5 @@
     enable = true;
     capSysNice = true;
   };
+  hardware.xone.enable = true;
 }
