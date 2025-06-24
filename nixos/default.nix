@@ -15,12 +15,8 @@
     ./audio.nix
     ./game.nix
     ./network.nix
-    ./login.nix
+    ./launch.nix
   ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   services.openssh = {
     enable = true;
