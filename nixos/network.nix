@@ -4,12 +4,5 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    settings = {
-      General = {
-        MultiProfile = "multiple";
-        FastConnectable = true;
-      };
-    };
   };
-  services.blueman.enable = true;
 }
