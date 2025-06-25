@@ -16,7 +16,7 @@
   boot.initrd.verbose = false;
   boot.plymouth.enable = true;
   boot.consoleLogLevel = 0;
-  systemd.extraConfig = "DefaultTimeoutStopSec=5s";
+  # systemd.extraConfig = "DefaultTimeoutStopSec=5s";
 
   services.getty.autologinUser = "jie";
   services.greetd = {
