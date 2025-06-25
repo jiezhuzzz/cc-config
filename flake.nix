@@ -19,6 +19,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
   outputs = inputs @ {
     self,
@@ -29,6 +30,7 @@
     nixvim,
     darwin,
     disko,
+    chaotic,
     ...
   }: let
     # Common functions
@@ -39,6 +41,7 @@
           ./nixos
           disko.nixosModules.disko
           vscode-server.nixosModules.default
+          chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
