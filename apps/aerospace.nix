@@ -94,6 +94,10 @@
           run = "move-node-to-workspace C";
         }
         {
+          "if".app-id = "com.todesktop.230313mzl4w4u92";
+          run = "move-node-to-workspace C";
+        }
+        {
           "if".app-id = "md.obsidian";
           run = "move-node-to-workspace O";
         }
@@ -103,11 +107,9 @@
         }
       ];
       workspace-to-monitor-force-assignment = {
-        A = "main";
-        O = "RD280U";
+        W = "main";
         C = "RD280U";
         T = "PD2725U";
-        Z = "PD2725U";
       };
     };
   };
