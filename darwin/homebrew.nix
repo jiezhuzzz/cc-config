@@ -32,6 +32,7 @@
       "nx-studio"
       "notion-calendar"
       "notion-mail"
+      "spotify"
     ];
     masApps = {
       "WeChat" = 836500024;

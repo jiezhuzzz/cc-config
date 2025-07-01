@@ -10,5 +10,6 @@
     ./fonts.nix
     ./homebrew.nix
     ../apps/aerospace.nix
+    ../apps/_1password.nix
   ];
 }
