@@ -16,5 +16,6 @@
 
   imports = [
     ./shared.nix
+    ../apps/podman.nix
   ];
 }
