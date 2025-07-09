@@ -55,6 +55,7 @@
     lzd = "lazydocker";
     jq = "jaq";
     grep = "rg";
+    ssh = "TERM=xterm-256color ssh";
   };
 
   programs.home-manager.enable = true;
