@@ -13,6 +13,8 @@
     codeql
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./shared.nix
     ../apps/podman.nix
