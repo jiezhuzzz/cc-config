@@ -54,6 +54,8 @@
     jq = "jaq";
     grep = "rg";
     ssh = "TERM=xterm-256color ssh";
+    openstack = "uvx --from python-openstackclient openstack";
+    blazar = "uvx --from python-blazarclient blazar";
   };
 
   programs.home-manager.enable = true;
