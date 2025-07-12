@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [
+    container
+  ];
+
   imports = [
     ./shared.nix
     # ../apps/ghostty.nix
