@@ -7,6 +7,22 @@
     # exitShellOnExit = true;
     settings = {
       theme = "nord";
+      keybinds = {
+        tab = {
+          "bind \"Shift Left\"" = {
+            MoveTab = "Left";
+          };
+          "bind \"Shift Right\"" = {
+            MoveTab = "Right";
+          };
+          "bind \"Shift h\"" = {
+            MoveTab = "Left";
+          };
+          "bind \"Shift l\"" = {
+            MoveTab = "Right";
+          };
+        };
+      };
     };
   };
 }

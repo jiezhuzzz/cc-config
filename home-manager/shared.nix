@@ -53,7 +53,7 @@
     lzd = "lazydocker";
     jq = "jaq";
     grep = "rg";
-    ssh = "TERM=xterm-256color ssh";
+    # ssh = "TERM=xterm-256color ssh";
     openstack = "uvx --from python-openstackclient openstack";
     blazar = "uvx --from python-blazarclient blazar";
   };
@@ -71,6 +71,7 @@
     ../apps/gitui.nix
     ../apps/fzf.nix
     ../apps/helix.nix
+    ../apps/jujutsu.nix
     ../apps/nixvim
   ];
 }

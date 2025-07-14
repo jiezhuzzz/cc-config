@@ -9,5 +9,6 @@
     ../apps/rio.nix
     ../apps/ssh.nix
     ../apps/zellij.nix
+    ../apps/espanso.nix
   ];
 }
