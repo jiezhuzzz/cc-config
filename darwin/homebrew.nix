@@ -33,6 +33,7 @@
       "notion-calendar"
       "notion-mail"
       "spotify"
+      "cleanshot"
     ];
     masApps = {
       "WeChat" = 836500024;
@@ -55,7 +56,7 @@
       "Affinity Photo 2" = 1616822987;
       "Affinity Publisher 2" = 1606941598;
       "CloudMounter" = 1130254674;
-      "TypeIt4Me 7" = 6474688391;
+      # "TypeIt4Me 7" = 6474688391;
     };
     onActivation = {
       autoUpdate = true;
