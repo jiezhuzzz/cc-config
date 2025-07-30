@@ -1,4 +1,3 @@
-#! /usr/bin/env bash
 aflpp() {
     AFL_VERSION="${AFL_VERSION:-"stable"}"
     case "$1" in
