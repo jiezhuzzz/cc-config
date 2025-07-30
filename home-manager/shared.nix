@@ -44,6 +44,7 @@
 
   home.shellAliases = {
     g = "git";
+    v = "nvim";
     vim = "nvim";
     vi = "nvim";
     ls = "eza";
