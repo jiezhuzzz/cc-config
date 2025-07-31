@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
-# @description "AFL++ wrapper"
-# @flag -l --local "Run in local mode"
-# @option -n --name "Container name"
-# @arg cmd~ "Command to run"
-
-eval "$(argc --argc-eval "$0" "$@")"
+# @describe AFL++ wrapper
+# @flag -l --local run in local mode
+# @option -n --name container name
+# @arg cmd~ command to run
 
 AFL_VERSION="${AFL_VERSION:-"stable"}"
 
 _aflpp_cmd() {
-    local img="aflplusplus/aflplusplus:$AFL_VERSION"
-    podman run -it --privileged --rm -v $PWD:/codebase "$image" -w /codebase "$argc_cmd[@]"
+	local img="aflplusplus/aflplusplus:$AFL_VERSION"
+	podman run -it --privileged --rm -v $PWD:/codebase "$image" -w /codebase "$argc_cmd[@]"
 }
 
 if [[ $argc_local ]]; then
-    error "Running in local mode"
-    return 1
+	echo "Running in local mode"
+	exit 1
 else
-    echo "Running AFL++ in podman mode"
-    _aflpp_cmd
+	echo "Running AFL++ in podman mode"
+	_aflpp_cmd
 fi
+
+eval "$(argc --argc-eval "$0" "$@")"

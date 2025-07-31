@@ -11,6 +11,5 @@
       "Aloxaf/fzf-tab"
       "lipov3cz3k/zsh-uv"
     ];
-    initContent = builtins.readFile ../scripts/aflpp.sh;
   };
 }
