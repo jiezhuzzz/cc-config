@@ -13,6 +13,7 @@
     codeql
     argc
     (writeShellScriptBin "aflpp" (builtins.readFile ../scripts/aflpp.sh))
+    (writeShellScriptBin "mx" (builtins.readFile ../scripts/multiplier.sh))
   ];
 
   nixpkgs.config.allowUnfree = true;

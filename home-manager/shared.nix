@@ -17,9 +17,9 @@
     ripgrep
     procs
     alejandra
-    codex
     curlie
     scc
+    shfmt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
