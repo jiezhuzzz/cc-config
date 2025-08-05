@@ -20,6 +20,7 @@
     curlie
     scc
     shfmt
+    _1password-cli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -55,8 +56,6 @@
     jq = "jaq";
     grep = "rg";
     # ssh = "TERM=xterm-256color ssh";
-    openstack = "uvx --from python-openstackclient openstack";
-    blazar = "uvx --from python-blazarclient blazar";
   };
 
   programs.home-manager.enable = true;
