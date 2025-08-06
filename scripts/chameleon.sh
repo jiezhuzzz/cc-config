@@ -21,6 +21,7 @@ blazar() {
     uvx --from python-blazarclient blazar "$@"
 }
 
+# @cmd openstack client
 openstack() {
     uvx --from python-openstackclient openstack "$@"
 }
@@ -32,24 +33,27 @@ openstack() {
 # @arg name! lease name
 lease-create() {
     local utc_end_date=$(TZ=UTC date -d "+$argc_duration days" +"%Y-%m-%d %H:00")
-    blazar lease-create --reservation min=$argc_nodes,max=$argc_nodes,resource_type=physical:host,resource_properties='["=", "\$node_type", "$argc_type"]' --end-date "$utc_end_date" "$argc_name"
+    # create baremetal reservation
+    blazar lease-create --reservation min=$argc_nodes,max=$argc_nodes,resource_type=physical:host,resource_properties="[\"=\", \"\$node_type\", \"$argc_type\"]" --end-date "$utc_end_date" "$argc_name"
+    # create floating ip reservation
+    local public_ip=$(openstack network show public -c id -f value)
+    blazar lease-create --reservation resource_type=virtual:floatingip,network_id=${public_ip},amount=$argc_nodes --end-date "$utc_end_date" "$argc_name"
 }
 
 # @cmd bind instances to a lease
 # @option -i --image[=CC-Ubuntu24.04|CC-Ubuntu22.04] image name
 # @arg lease! lease name
 # @arg name! instance name
-instance-bind() {
+instance-create() {
     local reservation_id=$(blazar lease-show -c reservations -f json "$argc_lease" | jq -r '.reservations | fromjson | .id')
-    local sharednet_id=$(openstack network list -f value -c id --name sharednet1)
-    echo "$argc_image"
+    local sharednet_id=$(openstack network show sharednet1 -c id -f value)
     openstack server create --image "$argc_image" --flavor baremetal --key-name 1password --nic net-id="$sharednet_id" --hint reservation="$reservation_id" "$argc_name"
 }
 
 # @cmd extend a lease
-# @arg name lease name
+# @arg name! lease name
 lease-extend() {
-    blazar lease-update --prolong-for "6d" "$argc_name"
+    blazar lease-update --prolong-for "7d" "$argc_name"
 }
 
 # @cmd list all leases

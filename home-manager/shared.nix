@@ -21,6 +21,7 @@
     scc
     shfmt
     _1password-cli
+    (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

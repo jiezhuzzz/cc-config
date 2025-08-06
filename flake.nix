@@ -44,7 +44,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
-              nixvim.homeManagerModules.nixvim
+              nixvim.homeModules.nixvim
               ./home-manager/nixos.nix
             ];
           }
@@ -75,7 +75,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
-              nixvim.homeManagerModules.nixvim
+              nixvim.homeModules.nixvim
               ./home-manager/darwin.nix
             ];
           }
@@ -86,7 +86,7 @@
       home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
-          nixvim.homeManagerModules.nixvim
+          nixvim.homeModules.nixvim
           ./home-manager/server.nix
         ];
         extraSpecialArgs = {
