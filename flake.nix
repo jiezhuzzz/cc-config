@@ -3,6 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +26,7 @@
     nixpkgs,
     flake-utils,
     vscode-server,
+    nix-homebrew,
     home-manager,
     nixvim,
     darwin,
@@ -68,6 +70,14 @@
             system.primaryUser = username;
             system.stateVersion = 6;
             system.configurationRevision = self.rev or self.dirtyRev or null;
+          }
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              user = username;
+              autoMigrate = true;
+            };
           }
           ./darwin
           home-manager.darwinModules.home-manager

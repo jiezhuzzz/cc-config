@@ -30,10 +30,12 @@
       "hazel"
       "openinterminal"
       "nx-studio"
+      "notion"
       "notion-calendar"
       "notion-mail"
       "spotify"
       "cleanshot"
+      "figma"
     ];
     masApps = {
       "WeChat" = 836500024;

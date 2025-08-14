@@ -21,6 +21,9 @@
     scc
     shfmt
     _1password-cli
+    argc
+    quarto
+    typst
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
   ];
 
