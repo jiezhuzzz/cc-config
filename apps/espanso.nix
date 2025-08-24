@@ -2,14 +2,6 @@
   services.espanso = {
     enable = true;
     matches = {
-      base = {
-        matches = [
-          {
-            trigger = "kx";
-            replace = "Kexin";
-          }
-        ];
-      };
       latex = {
         matches = [
           {
