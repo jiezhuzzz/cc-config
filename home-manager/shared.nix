@@ -25,6 +25,7 @@
     argc
     quarto
     typst
+    codex
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
   ];
 
