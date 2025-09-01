@@ -9,7 +9,7 @@ AFL_VERSION="${AFL_VERSION:-"stable"}"
 
 _aflpp_cmd() {
 	local img="aflplusplus/aflplusplus:$AFL_VERSION"
-	podman run -it --privileged --rm -v $PWD:/codebase "$image" -w /codebase "$argc_cmd[@]"
+	podman run -it --privileged --rm -v $PWD:/codebase "$img" -w /codebase "$argc_cmd[@]"
 }
 
 if [[ $argc_local ]]; then
