@@ -6,7 +6,7 @@
 export OS_AUTH_URL="https://chi.uc.chameleoncloud.org:5000/v3"
 export OS_IDENTITY_API_VERSION="3"
 export OS_INTERFACE="public"
-export OS_PROJECT_ID="808c50b3f1ae447e9fc1d6a5a03c2b66"
+export OS_PROJECT_ID="e46d806797dc438bbd703f97533ca4d6"
 export OS_USERNAME="jiezhu@uchicago.edu"
 export OS_PROTOCOL="openid"
 export OS_AUTH_TYPE="v3oidcpassword"

@@ -98,6 +98,10 @@
           run = "move-node-to-workspace C";
         }
         {
+          "if".app-id = "dev.zed.Zed";
+          run = "move-node-to-workspace C";
+        }
+        {
           "if".app-id = "md.obsidian";
           run = "move-node-to-workspace O";
         }

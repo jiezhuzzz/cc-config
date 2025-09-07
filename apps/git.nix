@@ -15,7 +15,7 @@
       };
       userName = "jiezhuzzz";
       userEmail = "jiezzz@duck.com";
-      ignores = [".DS_Store" ".direnv/"];
+      ignores = [".DS_Store" ".direnv/" ".cache/"];
       delta = {
         enable = true;
       };
