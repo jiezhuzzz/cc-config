@@ -18,6 +18,7 @@
     ripgrep
     procs
     alejandra
+    nil
     curlie
     scc
     shfmt
