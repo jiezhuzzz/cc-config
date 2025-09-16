@@ -20,7 +20,7 @@
         outer = {
           left = 10;
           bottom = 10;
-          top = 10;
+          top = 5;
           right = 10;
         };
       };
