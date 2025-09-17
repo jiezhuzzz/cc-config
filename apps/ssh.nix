@@ -3,6 +3,7 @@ let
 in {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     includes = [
       "./cc-config"
     ];
@@ -22,7 +23,7 @@ in {
       "*" = {
         compression = true;
         forwardAgent = true;
-        IdentityAgent = ${onePassPath};
+        identityAgent = "${onePassPath}";
       };
     };
   };
