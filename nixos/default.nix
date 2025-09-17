@@ -9,7 +9,14 @@
     # ./game.nix
     ./launch.nix
   ];
-
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    # Create a `docker` alias for podman, to use it as a drop-in replacement
+    dockerCompat = true;
+    # Required for containers under podman-compose to be able to talk to each other.
+    defaultNetwork.settings.dns_enabled = true;
+  };
   services.openssh = {
     enable = true;
   };
@@ -28,20 +35,10 @@
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "video" "audio"];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      tree
-    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
     ];
   };
-
-  # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    git
-  ];
 
   environment.sessionVariables = {
     PROTON_USE_NTSYNC = "1";

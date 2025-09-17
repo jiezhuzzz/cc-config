@@ -6,12 +6,6 @@
     limine.maxGenerations = 5;
   };
   boot.kernelParams = ["quiet"];
-  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  # boot.kernel.sysctl = {
-  #   "kernel.split_lock_mitigate" = 0;
-  #   "kernel.nmi_watchdog" = 0;
-  #   "kernel.sched_bore" = "1";
-  # };
   boot.initrd.systemd.enable = true;
   boot.initrd.verbose = false;
   boot.plymouth.enable = true;
