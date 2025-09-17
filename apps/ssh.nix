@@ -3,12 +3,6 @@ let
 in {
   programs.ssh = {
     enable = true;
-    compression = true;
-    forwardAgent = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ${onePassPath}
-    '';
     includes = [
       "./cc-config"
     ];
@@ -24,6 +18,11 @@ in {
       "vegeta" = {
         proxyJump = "uchicago";
         user = "jiezzz";
+      };
+      "*" = {
+        compression = true;
+        forwardAgent = true;
+        IdentityAgent = ${onePassPath};
       };
     };
   };
