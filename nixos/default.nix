@@ -20,7 +20,10 @@
   services.openssh = {
     enable = true;
   };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nixpkgs.config.allowUnfree = true;
 
   services.vscode-server.enable = true;
@@ -33,8 +36,13 @@
   programs.zsh.enable = true;
   users.users.jie = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "video" "audio"];
-    shell = pkgs.zsh;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+    ];
+    shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
     ];
