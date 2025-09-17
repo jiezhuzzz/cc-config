@@ -3,11 +3,7 @@
     enable = true;
     extensions = ["nix" "ruff" "dockerfile"];
     userSettings = {
-      theme = {
-        mode = "system";
-        light = "Catppuccin Latte";
-        dark = "Catppuccin Frappé";
-      };
+      helix_mode = true;
       buffer_font_size = 16;
       buffer_font_family = "JetBrainsMono Nerd Font";
       buffer_font_features.calt = false;

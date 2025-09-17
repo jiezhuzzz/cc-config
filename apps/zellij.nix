@@ -6,7 +6,6 @@
     # attachExistingSession = true;
     # exitShellOnExit = true;
     settings = {
-      theme = "nord";
       keybinds = {
         tab = {
           "bind \"Shift Left\"" = {
