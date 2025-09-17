@@ -1,21 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    ./hardware-configuration.nix
-    ./partition.nix
+    ./hardware/audio.nix
+    ./hardware/graphic.nix
+    ./hardware/partition.nix
+    ./hardware/network.nix
+    ./host.nix
     ./fonts.nix
-    ./graphic.nix
-    ./audio.nix
-    ./game.nix
-    ./network.nix
-    ./launch.nix
+    # ./game.nix
+    # ./launch.nix
   ];
 
   services.openssh = {
