@@ -20,7 +20,7 @@
       "homerow"
       "1password"
       "karabiner-elements"
-      "bartender"
+      # "bartender"
       "ghostty"
       "pronotes"
       "visual-studio-code"

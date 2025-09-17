@@ -10,5 +10,6 @@
     ../apps/ssh.nix
     ../apps/zellij.nix
     ../apps/espanso.nix
+    ../apps/zed.nix
   ];
 }
