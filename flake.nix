@@ -5,6 +5,7 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     agenix.url = "github:yaxitech/ragenix";
+    catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
     self,
     nixpkgs,
     flake-utils,
+    catppuccin,
     vscode-server,
     nix-homebrew,
     home-manager,
@@ -41,6 +43,7 @@
         system = "x86_64-linux";
         modules = [
           ./nixos
+          catppuccin.nixosModules.catppuccin
           disko.nixosModules.disko
           vscode-server.nixosModules.default
           home-manager.nixosModules.home-manager
@@ -49,6 +52,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
               nixvim.homeModules.nixvim
+              catppuccin.homeModules.catppuccin
               ./home-manager/nixos.nix
             ];
           }
@@ -89,6 +93,7 @@
             home-manager.users.${username}.imports = [
               nixvim.homeModules.nixvim
               agenix.homeManagerModules.default
+              catppuccin.homeModules.catppuccin
               ./home-manager/darwin.nix
             ];
           }
@@ -100,6 +105,7 @@
         pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
           nixvim.homeModules.nixvim
+          catppuccin.homeModules.catppuccin
           ./home-manager/server.nix
         ];
         extraSpecialArgs = {

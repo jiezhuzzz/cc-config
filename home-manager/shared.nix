@@ -19,6 +19,7 @@
     procs
     curlie
     scc
+    _1password-cli
     # languages
     uv
     quarto
@@ -27,7 +28,6 @@
     alejandra
     nil
     shfmt
-    _1password-cli
     argc
     codex
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
@@ -69,6 +69,8 @@
   };
 
   programs.home-manager.enable = true;
+  catppuccin.enable = true;
+  catppuccin.flavor = "frappe";
 
   imports = [
     ../apps/direnv.nix
