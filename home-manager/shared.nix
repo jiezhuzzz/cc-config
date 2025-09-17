@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.stateVersion = "25.11";
 
   home.preferXdgDirectories = true;
@@ -7,25 +8,28 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # utils
     fastfetch
     bat
     fd
-    uv
     lazydocker
     podman-tui
     bottom
     jaq
     ripgrep
     procs
-    alejandra
-    nil
     curlie
     scc
+    # languages
+    uv
+    quarto
+    typst
+    # LSP
+    alejandra
+    nil
     shfmt
     _1password-cli
     argc
-    quarto
-    typst
     codex
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
   ];

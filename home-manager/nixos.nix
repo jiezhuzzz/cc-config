@@ -8,8 +8,11 @@
       fcitx5-rime
     ];
   };
+  home.packages = with pkgs; [
+    codeql
+    shpool
+  ];
 
-  #wayland.windowManager.hyprland.enable = true;
   imports = [
     ./shared.nix
     ../apps/ghostty.nix
