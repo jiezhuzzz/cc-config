@@ -90,6 +90,10 @@
           run = "move-node-to-workspace T";
         }
         {
+          "if".app-id = "com.raphaelamorim.rio";
+          run = "move-node-to-workspace T";
+        }
+        {
           "if".app-id = "com.microsoft.VSCode";
           run = "move-node-to-workspace C";
         }
