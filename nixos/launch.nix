@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
@@ -18,12 +18,12 @@
   boot.consoleLogLevel = 0;
   # systemd.extraConfig = "DefaultTimeoutStopSec=5s";
 
-  services.getty.autologinUser = "jie";
-  services.greetd = {
-    enable = true;
-    settings.default_session = {
-      user = "jie";
-      command = "steam-gamescope > /dev/null 2>&1";
-    };
-  };
+  # services.getty.autologinUser = "jie";
+  # services.greetd = {
+  #   enable = true;
+  #   settings.default_session = {
+  #     user = "jie";
+  #     command = "steam-gamescope > /dev/null 2>&1";
+  #   };
+  # };
 }

@@ -7,7 +7,7 @@
     ./host.nix
     ./fonts.nix
     # ./game.nix
-    # ./launch.nix
+    ./launch.nix
   ];
 
   services.openssh = {
