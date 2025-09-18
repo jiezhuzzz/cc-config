@@ -20,6 +20,7 @@
     curlie
     scc
     _1password-cli
+    unzip
     # languages
     uv
     quarto

@@ -6,7 +6,7 @@
     ./hardware/network.nix
     ./host.nix
     ./fonts.nix
-    # ./game.nix
+    ./game.nix
     ./launch.nix
   ];
   virtualisation.containers.enable = true;
@@ -34,19 +34,6 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
-  users.users.jie = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "video"
-      "audio"
-    ];
-    shell = pkgs.zsh;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
-    ];
-  };
 
   environment.sessionVariables = {
     PROTON_USE_NTSYNC = "1";

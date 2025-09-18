@@ -14,7 +14,7 @@
       BatteryShowPercentage = false;
       Bluetooth = false;
       Display = false;
-      FocusModes = true;
+      FocusModes = false;
       NowPlaying = false;
       Sound = false;
     };
@@ -34,7 +34,7 @@
     };
     menuExtraClock = {
       Show24Hour = true;
-      ShowDate = 0;
+      ShowDate = 2;
       ShowDayOfWeek = false;
     };
     spaces.spans-displays = false;

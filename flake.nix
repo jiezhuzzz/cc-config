@@ -42,12 +42,20 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./nixos
-          catppuccin.nixosModules.catppuccin
-          disko.nixosModules.disko
-          vscode-server.nixosModules.default
-          home-manager.nixosModules.home-manager
           {
+            users.users.${username} = {
+              isNormalUser = true;
+              extraGroups = [
+                "wheel"
+                "networkmanager"
+                "video"
+                "audio"
+              ];
+              shell = nixpkgs.legacyPackages.x86_64-linux.zsh;
+              openssh.authorizedKeys.keys = [
+                "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
+              ];
+            };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
@@ -56,6 +64,11 @@
               ./home-manager/nixos.nix
             ];
           }
+          ./nixos
+          catppuccin.nixosModules.catppuccin
+          disko.nixosModules.disko
+          vscode-server.nixosModules.default
+          home-manager.nixosModules.home-manager
         ];
       };
 
