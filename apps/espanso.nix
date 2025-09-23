@@ -25,5 +25,10 @@
         ];
       };
     };
+    configs = {
+      default = {
+        show_icon = false;
+      };
+    };
   };
 }
