@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -eo pipefail
+if test -n "$SSH_TTY"; then
+	nc -q1 localhost 2224
+elif test "$(uname)" = Darwin; then
+	/usr/bin/pbcopy
+else
+	xsel --clipboard --input
+fi
