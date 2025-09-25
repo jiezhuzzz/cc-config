@@ -32,6 +32,8 @@
     argc
     codex
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
+    (writeShellScriptBin "pbcopy" (builtins.readFile ../scripts/pbcopy.sh))
+    (writeShellScriptBin "pbpaste" (builtins.readFile ../scripts/pbpaste.sh))
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

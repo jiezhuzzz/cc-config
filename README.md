@@ -18,4 +18,4 @@ sudo chsh -s $(which zsh) cc
 
 - [My Nix Journey - Use Nix on Ubuntu](https://tech.aufomm.com/my-nix-journey-use-nix-with-ubuntu/#Install-Nix)
 - [Installing NixOS with Flakes and LVM on LUKS](https://jadarma.github.io/blog/posts/2024/08/installing-nixos-with-flakes-and-lvm-on-luks/)
-- [Using open, pbcopy and pbpaste over SSH] (https://carlosbecker.com/posts/pbcopy-pbpaste-open-ssh/)
+- [Using open, pbcopy and pbpaste over SSH](https://carlosbecker.com/posts/pbcopy-pbpaste-open-ssh/)

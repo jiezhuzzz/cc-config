@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     container
+    kanata
   ];
 
   imports = [
@@ -10,5 +11,6 @@
     ../apps/zellij.nix
     ../apps/espanso.nix
     ../apps/zed.nix
+    ../apps/wezterm.nix
   ];
 }
