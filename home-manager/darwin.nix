@@ -12,5 +12,7 @@
     ../apps/espanso.nix
     ../apps/zed.nix
     ../apps/wezterm.nix
+    ../apps/fish.nix
+    ../apps/starship.nix
   ];
 }
