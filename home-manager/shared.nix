@@ -79,7 +79,6 @@
     ../apps/direnv.nix
     ../apps/eza.nix
     ../apps/zsh.nix
-    ../apps/oh-my-posh.nix
     ../apps/tmux.nix
     ../apps/yazi.nix
     ../apps/git.nix

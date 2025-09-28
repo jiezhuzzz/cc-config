@@ -20,6 +20,7 @@
 
   imports = [
     ./shared.nix
+    ../apps/oh-my-posh.nix
     ../apps/podman.nix
   ];
 }

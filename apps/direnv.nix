@@ -2,7 +2,7 @@
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
+    # enableFishIntegration = true; # read-only, always set to true
     nix-direnv.enable = true;
     config = {
       global.load_dotenv = true;
