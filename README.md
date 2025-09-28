@@ -5,7 +5,7 @@
 sudo apt update && sudo apt upgrade
 
 # install nix
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 
 # run home-manager
 nix run nixpkgs#home-manager -- switch --flake github:jiezhuzzz/cc-config#<host>
