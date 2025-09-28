@@ -24,6 +24,20 @@ in {
         compression = true;
         forwardAgent = true;
         identityAgent = "${onePassPath}";
+        remoteForwards = [
+          {
+            # pbcopy
+            bind.port = 2224;
+            host.address = "127.0.0.1";
+            host.port = 2224;
+          }
+          {
+            # pbpaste
+            bind.port = 2225;
+            host.address = "127.0.0.1";
+            host.port = 2225;
+          }
+        ];
       };
     };
   };
