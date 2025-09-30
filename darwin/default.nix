@@ -5,7 +5,7 @@
     config.allowUnfree = true;
     # hostPlatform = "aarch64-darwin";
   };
-
+  programs.fish.enable = true;
   imports = [
     ./system.nix
     ./launchd.nix
