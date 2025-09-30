@@ -89,18 +89,6 @@
             system.primaryUser = username;
             system.stateVersion = 6;
             system.configurationRevision = self.rev or self.dirtyRev or null;
-          }
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              user = username;
-              autoMigrate = true;
-            };
-          }
-          ./darwin
-          home-manager.darwinModules.home-manager
-          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
@@ -109,7 +97,15 @@
               catppuccin.homeModules.catppuccin
               ./home-manager/darwin.nix
             ];
+            nix-homebrew = {
+              enable = true;
+              user = username;
+              autoMigrate = true;
+            };
           }
+          ./darwin
+          nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
         ];
       };
 
