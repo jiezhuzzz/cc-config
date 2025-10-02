@@ -38,7 +38,7 @@
     ...
   }: let
     # Common functions
-    mkNixosConfig = username:
+    mkDesktopConfig = username:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -61,13 +61,46 @@
             home-manager.users.${username}.imports = [
               nixvim.homeModules.nixvim
               catppuccin.homeModules.catppuccin
-              ./home-manager/nixos.nix
+              ./home-manager/desktop.nix
             ];
           }
-          ./nixos
+          ./desktop
           catppuccin.nixosModules.catppuccin
           disko.nixosModules.disko
           vscode-server.nixosModules.default
+          home-manager.nixosModules.home-manager
+        ];
+      };
+
+    mkNasConfig = username:
+      nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          {
+            users.users.${username} = {
+              isNormalUser = true;
+              extraGroups = [
+                "wheel"
+                "networkmanager"
+                "video"
+                "audio"
+              ];
+              shell = nixpkgs.legacyPackages.x86_64-linux.zsh;
+              openssh.authorizedKeys.keys = [
+                "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
+              ];
+            };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username}.imports = [
+              nixvim.homeModules.nixvim
+              catppuccin.homeModules.catppuccin
+              ./home-manager/nas.nix
+            ];
+          }
+          ./nas
+          catppuccin.nixosModules.catppuccin
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
         ];
       };
@@ -131,7 +164,7 @@
     )
     // {
       nixosConfigurations = {
-        steamer = mkNixosConfig "jie";
+        steamer = mkDesktopConfig "jie";
       };
 
       darwinConfigurations = {
@@ -142,6 +175,10 @@
         cc = mkServerConfig "cc" "/home/cc";
         goku = mkServerConfig "jiezzz" "/zp_goku/scratch_sb/jiezzz";
         vegeta = mkServerConfig "jiezzz" "/zp_vegeta/scratch_sb/jiezzz";
+      };
+
+      nasConfigurations = {
+        nas = mkNasConfig "nas";
       };
     };
 }
