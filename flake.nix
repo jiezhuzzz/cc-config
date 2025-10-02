@@ -165,6 +165,7 @@
     // {
       nixosConfigurations = {
         steamer = mkDesktopConfig "jie";
+        nas = mkNasConfig "nas";
       };
 
       darwinConfigurations = {
@@ -175,10 +176,6 @@
         cc = mkServerConfig "cc" "/home/cc";
         goku = mkServerConfig "jiezzz" "/zp_goku/scratch_sb/jiezzz";
         vegeta = mkServerConfig "jiezzz" "/zp_vegeta/scratch_sb/jiezzz";
-      };
-
-      nasConfigurations = {
-        nas = mkNasConfig "nas";
       };
     };
 }
