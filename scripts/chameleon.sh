@@ -32,12 +32,16 @@ openstack() {
 # @option -d --duration=7 duration of the lease (days)
 # @arg name! lease name
 lease-create() {
-    local utc_end_date=$(TZ=UTC date -d "+$argc_duration days" +"%Y-%m-%d %H:00")
-    # create baremetal reservation
-    blazar lease-create --reservation min=$argc_nodes,max=$argc_nodes,resource_type=physical:host,resource_properties="[\"=\", \"\$node_type\", \"$argc_type\"]" --end-date "$utc_end_date" "$argc_name"
-    # create floating ip reservation
+    if date -d "now" >/dev/null 2>&1; then
+        local utc_end_date=$(TZ=UTC date -d "+${argc_duration} days" +"%Y-%m-%d %H:00")
+    else
+        local utc_end_date=$(TZ=UTC date -v+"${argc_duration}"d +"%Y-%m-%d %H:00")
+    fi
     local public_ip=$(openstack network show public -c id -f value)
-    blazar lease-create --reservation resource_type=virtual:floatingip,network_id=${public_ip},amount=$argc_nodes --end-date "$utc_end_date" "$argc_name"
+    blazar lease-create \
+      --reservation "min=$argc_nodes,max=$argc_nodes,resource_type=physical:host,resource_properties=[\"=\",\"\$node_type\",\"$argc_type\"]" \
+      --reservation "resource_type=virtual:floatingip,network_id=${public_ip},amount=$argc_nodes" \
+      --end-date "$utc_end_date" "$argc_name"
 }
 
 # @cmd bind instances to a lease
