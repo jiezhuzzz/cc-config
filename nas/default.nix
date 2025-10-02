@@ -29,14 +29,5 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
 
-  environment.sessionVariables = {
-    PROTON_USE_NTSYNC = "1";
-    ENABLE_HDR_WSI = "1";
-    DXVK_HDR = "1";
-    PROTON_ENABLE_NVAPI = "1";
-    ENABLE_GAMESCOPE_WSI = "1";
-    STEAM_MULTIPLE_XWAYLANDS = "1";
-  };
-
   system.stateVersion = "25.11";
 }
