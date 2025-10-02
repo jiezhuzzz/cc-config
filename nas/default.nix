@@ -3,6 +3,8 @@
     ./hardware/auto-gen.nix
     ./hardware/partition.nix
     ./hardware/network.nix
+    ../apps/transmission.nix
+    ../apps/plex.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
