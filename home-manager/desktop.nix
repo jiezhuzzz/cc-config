@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-  programs.kitty.enable = true;
-
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
