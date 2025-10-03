@@ -7,6 +7,7 @@
     ../apps/plex.nix
     ../apps/immich.nix
     ../apps/komga.nix
+    ../apps/kavita.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
@@ -32,13 +33,6 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
-
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024; # 16 GB
-    }
-  ];
 
   system.stateVersion = "25.11";
 }
