@@ -5,6 +5,7 @@
     ./hardware/network.nix
     ../apps/transmission.nix
     ../apps/plex.nix
+    ../apps/immich.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
