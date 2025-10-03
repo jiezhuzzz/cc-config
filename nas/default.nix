@@ -6,6 +6,7 @@
     ../apps/transmission.nix
     ../apps/plex.nix
     ../apps/immich.nix
+    ../apps/komga.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
