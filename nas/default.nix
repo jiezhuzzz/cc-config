@@ -7,7 +7,6 @@
     ../apps/plex.nix
     ../apps/immich.nix
     ../apps/komga.nix
-    ../apps/kavita.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
