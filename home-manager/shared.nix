@@ -89,5 +89,6 @@
     ../apps/jujutsu.nix
     ../apps/nixvim
     ../apps/rclone.nix
+    ../apps/zoxide.nix
   ];
 }
