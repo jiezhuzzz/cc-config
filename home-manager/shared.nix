@@ -25,6 +25,7 @@
     uv
     quarto
     typst
+    nodejs
     # LSP
     alejandra
     nil
