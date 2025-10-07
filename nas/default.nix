@@ -33,5 +33,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
 
+  boot.zfs.extraPools = [ "zstorage" ];
+
   system.stateVersion = "25.11";
 }
