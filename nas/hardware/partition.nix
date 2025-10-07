@@ -79,13 +79,13 @@ in {
         datasets = {
           "root" = {
             type = "zfs_fs";
-            canmount = "on";
-            options.mountpoint = "/";
+            mountpoint = "/";
+            #options.mountpoint = "legacy";
           };
           "home" = {
             type = "zfs_fs";
-            canmount = "on";
-            options.mountpoint = "/home";
+            mountpoint = "/home";
+            #options.mountpoint = "legacy";
           };
         };
       };
@@ -103,13 +103,13 @@ in {
         datasets = {
           "storage" = {
             type = "zfs_fs";
-            canmount = "on";
             options.mountpoint = "/storage";
+            #options.mountpoint = "legacy";
           };
           "photos" = {
             type = "zfs_fs";
-            canmount = "on";
             options.mountpoint = "/storage/photos";
+            #options.mountpoint = "legacy";
           };
         };
       };
