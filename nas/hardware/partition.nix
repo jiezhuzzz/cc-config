@@ -79,11 +79,11 @@ in {
         datasets = {
           "root" = {
             type = "zfs_fs";
-            mountpoint = "/";
+            options.mountpoint = "/";
           };
           "home" = {
             type = "zfs_fs";
-            mountpoint = "/home";
+            options.mountpoint = "/home";
           };
         };
       };
@@ -102,11 +102,11 @@ in {
         datasets = {
           "storage" = {
             type = "zfs_fs";
-            mountpoint = "/storage";
+            options.mountpoint = "/storage";
           };
           "photos" = {
             type = "zfs_fs";
-            mountpoint = "/storage/photos";
+            options.mountpoint = "/storage/photos";
           };
         };
       };
