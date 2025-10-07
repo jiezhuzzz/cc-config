@@ -41,29 +41,10 @@
     mkDesktopConfig = username:
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          inherit username nixvim catppuccin;
+        };
         modules = [
-          {
-            users.users.${username} = {
-              isNormalUser = true;
-              extraGroups = [
-                "wheel"
-                "networkmanager"
-                "video"
-                "audio"
-              ];
-              shell = nixpkgs.legacyPackages.x86_64-linux.zsh;
-              openssh.authorizedKeys.keys = [
-                "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
-              ];
-            };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username}.imports = [
-              nixvim.homeModules.nixvim
-              catppuccin.homeModules.catppuccin
-              ./home-manager/desktop.nix
-            ];
-          }
           ./desktop
           catppuccin.nixosModules.catppuccin
           disko.nixosModules.disko
