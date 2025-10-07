@@ -1,3 +1,5 @@
-{
-  programs.fish.enable = true;
+{pkgs}: {
+  programs.fish = {
+    enable = true;
+  };
 }
