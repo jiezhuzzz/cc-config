@@ -3,7 +3,7 @@
     disk = {
       zero = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = " /dev/disk/by-id/nvme-Samsung_SSD_9100_PRO_4TB_S7YANJ0Y300397K";
         content = {
           type = "gpt";
           partitions = {
@@ -29,7 +29,7 @@
       };
       one = {
         type = "disk";
-        device = "/dev/nvme1n1";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_9100_PRO_with_Heatsink_4TB_S7ZRNJ0Y407276L";
         content = {
           type = "gpt";
           partitions = {
