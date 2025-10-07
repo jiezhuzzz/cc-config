@@ -79,10 +79,12 @@ in {
         datasets = {
           "root" = {
             type = "zfs_fs";
-            mountpoint = "/";
+            canmount = "on";
+            options.mountpoint = "/";
           };
           "home" = {
             type = "zfs_fs";
+            canmount = "on";
             options.mountpoint = "/home";
           };
         };
@@ -101,10 +103,12 @@ in {
         datasets = {
           "storage" = {
             type = "zfs_fs";
+            canmount = "on";
             options.mountpoint = "/storage";
           };
           "photos" = {
             type = "zfs_fs";
+            canmount = "on";
             options.mountpoint = "/storage/photos";
           };
         };
