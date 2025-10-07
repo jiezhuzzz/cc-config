@@ -79,7 +79,7 @@ in {
         datasets = {
           "root" = {
             type = "zfs_fs";
-            options.mountpoint = "/";
+            mountpoint = "/";
           };
           "home" = {
             type = "zfs_fs";
@@ -91,7 +91,6 @@ in {
       zstorage = {
         type = "zpool";
         mode = "raidz2";
-        options.cachefile = "none";
         rootFsOptions = {
           canmount = "off";
           atime = "off";
