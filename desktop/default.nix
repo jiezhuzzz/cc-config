@@ -14,6 +14,7 @@
     ./game.nix
     ./launch.nix
   ];
+  users.mutableUsers = false;
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
