@@ -1,9 +1,9 @@
 {
   disko.devices = {
     disk = {
-      zero = {
+      front = {
         type = "disk";
-        device = " /dev/disk/by-id/nvme-Samsung_SSD_9100_PRO_4TB_S7YANJ0Y300397K";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_9100_PRO_4TB_S7YANJ0Y300397K";
         content = {
           type = "gpt";
           partitions = {
@@ -27,7 +27,7 @@
           };
         };
       };
-      one = {
+      back = {
         type = "disk";
         device = "/dev/disk/by-id/nvme-Samsung_SSD_9100_PRO_with_Heatsink_4TB_S7ZRNJ0Y407276L";
         content = {
