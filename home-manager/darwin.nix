@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [
     container
     kanata
@@ -15,5 +19,6 @@
     ../apps/wezterm.nix
     ../apps/fish.nix
     ../apps/starship.nix
+    ../apps/rclone.nix
   ];
 }
