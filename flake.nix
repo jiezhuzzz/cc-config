@@ -4,7 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    agenix.url = "github:yaxitech/ragenix";
+    opnix.url = "github:brizzbuzz/opnix";
     catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,7 +34,7 @@
     nixvim,
     darwin,
     disko,
-    agenix,
+    opnix,
     ...
   }: let
     # Common functions
@@ -107,7 +107,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
               nixvim.homeModules.nixvim
-              agenix.homeManagerModules.default
+              opnix.homeManagerModules.default
               catppuccin.homeModules.catppuccin
               ./home-manager/darwin.nix
             ];
