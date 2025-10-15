@@ -348,15 +348,16 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1751283143,
-        "narHash": "sha256-I3DMLT0qg5xxjS7BrmOBIK6pG+vZqOhKivEGnkDIli8=",
-        "owner": "brizzbuzz",
+        "lastModified": 1760422657,
+        "narHash": "sha256-hrOKJnCCTq6OLn2Y9slANdCe8VvGb4hwMMmiXdiiOEM=",
+        "owner": "jiezhuzzz",
         "repo": "opnix",
-        "rev": "1a807befe8f418da0df24c54b9633c395d840d0e",
+        "rev": "ddada15dd05897ceaf2f6cfb7b87b36c263455d9",
         "type": "github"
       },
       "original": {
-        "owner": "brizzbuzz",
+        "owner": "jiezhuzzz",
+        "ref": "dev",
         "repo": "opnix",
         "type": "github"
       }
