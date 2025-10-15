@@ -36,6 +36,7 @@
       "spotify"
       "cleanshot"
       "figma"
+      "plex"
     ];
     masApps = {
       "WeChat" = 836500024;

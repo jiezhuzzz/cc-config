@@ -12,13 +12,12 @@ in {
         hostname = "linux.cs.uchicago.edu";
         user = "jiezhu";
       };
-      "goku" = {
+      "goku vegeta" = {
         proxyJump = "uchicago";
         user = "jiezzz";
       };
-      "vegeta" = {
-        proxyJump = "uchicago";
-        user = "jiezzz";
+      "192.5.86.* 192.5.87.*" = {
+        user = "cc";
       };
       "*" = {
         compression = true;

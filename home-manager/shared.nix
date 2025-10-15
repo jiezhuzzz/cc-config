@@ -31,7 +31,12 @@
     nil
     shfmt
     argc
+
+    # agents
+    claude-code
     codex
+    gemini-cli
+
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
     (writeShellScriptBin "pbcopy" (builtins.readFile ../scripts/pbcopy.sh))
     (writeShellScriptBin "pbpaste" (builtins.readFile ../scripts/pbpaste.sh))
