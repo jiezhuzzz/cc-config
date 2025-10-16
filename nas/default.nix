@@ -3,10 +3,10 @@
     ./hardware/auto-gen.nix
     ./hardware/partition.nix
     ./hardware/network.nix
-    ../apps/transmission.nix
-    ../apps/plex.nix
-    ../apps/immich.nix
-    ../apps/komga.nix
+    ../apps/media/transmission.nix
+    ../apps/media/plex.nix
+    ../apps/media/immich.nix
+    ../apps/media/komga.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
