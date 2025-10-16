@@ -21,7 +21,7 @@
       "1password"
       "karabiner-elements"
       # "bartender"
-      "ghostty"
+      # "ghostty"
       "pronotes"
       "visual-studio-code"
       "pika"

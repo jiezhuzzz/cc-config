@@ -11,13 +11,19 @@ in {
       "uchicago" = {
         hostname = "linux.cs.uchicago.edu";
         user = "jiezhu";
+        identityFile = "~/.ssh/lab.private";
       };
       "goku vegeta" = {
         proxyJump = "uchicago";
         user = "jiezzz";
+        identityFile = "~/.ssh/lab.private";
       };
       "192.5.86.* 192.5.87.*" = {
         user = "cc";
+        identityFile = "~/.ssh/cc.private";
+      };
+      "192.168.1.*" = {
+        identityFile = "~/.ssh/personal.private";
       };
       "*" = {
         compression = true;
