@@ -11,12 +11,12 @@
 
   imports = [
     ./shared.nix
-    ../apps/rio.nix
+    ../apps/gui/rio.nix
     ../apps/ssh.nix
     ../apps/zellij.nix
-    ../apps/espanso.nix
-    ../apps/zed.nix
-    ../apps/wezterm.nix
+    ../apps/gui/espanso.nix
+    ../apps/gui/zed.nix
+    ../apps/gui/wezterm.nix
     ../apps/fish.nix
     ../apps/starship.nix
     ../apps/rclone.nix
