@@ -1,5 +1,5 @@
 {
-  programs.claude-code = {
+  programs.gemini-cli = {
     enable = true;
   };
 }

@@ -1,5 +1,5 @@
 {
-  programs.claude-code = {
+  programs.codex = {
     enable = true;
   };
 }
