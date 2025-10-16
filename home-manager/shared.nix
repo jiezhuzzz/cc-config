@@ -32,11 +32,6 @@
     shfmt
     argc
 
-    # agents
-    claude-code
-    codex
-    gemini-cli
-
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
     (writeShellScriptBin "pbcopy" (builtins.readFile ../scripts/pbcopy.sh))
     (writeShellScriptBin "pbpaste" (builtins.readFile ../scripts/pbpaste.sh))
@@ -95,5 +90,8 @@
     ../apps/nixvim
     # ../apps/rclone.nix
     ../apps/zoxide.nix
+    ../apps/claude.nix
+    ../apps/codex.nix
+    ../apps/gemini.nix
   ];
 }
