@@ -56,6 +56,7 @@
               tab = {
                 _props = {
                   name = "goku";
+                  split_direction = "horizontal";
                   focus = true;
                 };
                 _children = [

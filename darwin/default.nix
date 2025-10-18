@@ -5,6 +5,11 @@
     config.allowUnfree = true;
     # hostPlatform = "aarch64-darwin";
   };
+  nix.gc = {
+    automatic = true;
+    interval = [{Weekday = 2;}];
+    options = "--delete-older-than 3d";
+  };
   programs.fish.enable = true;
   imports = [
     ./system.nix
