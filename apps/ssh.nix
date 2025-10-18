@@ -17,6 +17,10 @@ in {
         proxyJump = "uchicago";
         user = "jiezzz";
         identityFile = "~/.ssh/lab.private";
+        extraOptions = {
+          "RequestTTY" = "yes";
+          "RemoteCommand" = "bash -lc 'shpool attach dev'";
+        };
       };
       "192.5.86.* 192.5.87.*" = {
         user = "cc";

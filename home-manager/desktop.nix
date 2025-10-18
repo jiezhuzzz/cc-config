@@ -6,9 +6,9 @@
       fcitx5-rime
     ];
   };
-  home.packages = with pkgs; [
-    shpool
-  ];
+  # home.packages = with pkgs; [
+
+  # ];
 
   imports = [
     ./shared.nix

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    shpool
-  ];
+  # home.packages = with pkgs; [
+  #   shpool
+  # ];
 
   imports = [
     ./shared.nix
