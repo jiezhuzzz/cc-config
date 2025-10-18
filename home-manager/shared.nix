@@ -15,6 +15,7 @@
     podman-tui
     bottom
     jaq
+    ov
     ripgrep
     procs
     curlie
@@ -53,8 +54,8 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nvim";
-    ZVM_INIT_MODE = "sourcing";
+    EDITOR = "hx";
+    # ZVM_INIT_MODE = "sourcing";
   };
 
   home.shellAliases = {
@@ -69,6 +70,7 @@
     lzd = "lazydocker";
     jq = "jaq";
     grep = "rg";
+    less = "ov";
     # ssh = "TERM=xterm-256color ssh";
   };
 
