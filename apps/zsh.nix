@@ -7,7 +7,7 @@
     antidote.plugins = [
       "zsh-users/zsh-completions"
       "zsh-users/zsh-syntax-highlighting"
-      "jeffreytse/zsh-helix-mode"
+      "multirious/zsh-helix-mode"
       "Aloxaf/fzf-tab"
       "lipov3cz3k/zsh-uv"
     ];
