@@ -4,7 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-    opnix.url = "github:jiezhuzzz/opnix/dev";
+    opnix.url = "github:brizzbuzz/opnix";
     catppuccin.url = "github:catppuccin/nix";
     home-manager = {
       url = "github:nix-community/home-manager";
