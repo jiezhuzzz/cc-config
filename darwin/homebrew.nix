@@ -2,7 +2,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "obsidian"
       "arc"
       "raycast"
       "balenaetcher"
