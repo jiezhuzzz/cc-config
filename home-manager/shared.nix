@@ -85,10 +85,11 @@
     ../apps/tmux.nix
     ../apps/yazi.nix
     ../apps/git.nix
+    ../apps/delta.nix
     # ../apps/gitui.nix
     ../apps/fzf.nix
     ../apps/helix.nix
-    ../apps/jujutsu.nix
+    # ../apps/jujutsu.nix
     ../apps/nixvim
     # ../apps/rclone.nix
     ../apps/zoxide.nix
