@@ -1,7 +1,7 @@
 {
   programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "ruff" "dockerfile"];
+    extensions = ["nix" "toml" "typst" "dockerfile"];
     userSettings = {
       helix_mode = true;
       # UI
