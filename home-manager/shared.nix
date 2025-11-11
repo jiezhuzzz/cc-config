@@ -25,6 +25,7 @@
     # languages
     uv
     quarto
+    just
     typst
     nodejs
     # LSP
