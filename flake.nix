@@ -128,6 +128,7 @@
         pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
           nixvim.homeModules.nixvim
+          opnix.homeManagerModules.default
           catppuccin.homeModules.catppuccin
           ./home-manager/server.nix
         ];

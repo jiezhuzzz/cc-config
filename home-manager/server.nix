@@ -22,5 +22,6 @@
     ../apps/oh-my-posh.nix
     ../apps/podman.nix
     ../apps/shpool.nix
+    ../apps/op.nix
   ];
 }
