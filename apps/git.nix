@@ -1,8 +1,4 @@
 {
-  pkgs,
-  lib,
-  ...
-}: {
   programs.git = {
     enable = true;
     settings = {
@@ -19,5 +15,10 @@
       };
     };
     ignores = [".DS_Store" ".direnv/" ".cache/"];
+    signing = {
+      format = "ssh";
+      key = "~/.ssh/signing.private";
+      signByDefault = true;
+    };
   };
 }

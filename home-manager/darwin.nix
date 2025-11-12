@@ -1,11 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     container
-    kanata
     (writeShellScriptBin "ssh-clean" (builtins.readFile ../scripts/ssh-clean.sh))
   ];
 

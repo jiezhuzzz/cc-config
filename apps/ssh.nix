@@ -1,6 +1,4 @@
-let
-  onePassPath = "~/Library/Group\\ Containers/2BUA8C4S2C.com.1password/t/agent.sock";
-in {
+{
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -8,6 +6,11 @@ in {
       "./cc-config"
     ];
     matchBlocks = {
+      "github.com" = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/github.private";
+      };
       "uchicago" = {
         hostname = "linux.cs.uchicago.edu";
         user = "jiezhu";
@@ -28,7 +31,6 @@ in {
       "*" = {
         compression = true;
         forwardAgent = true;
-        identityAgent = "${onePassPath}";
         remoteForwards = [
           {
             # pbcopy
