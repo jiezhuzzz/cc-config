@@ -17,5 +17,6 @@
     ../apps/fish.nix
     ../apps/starship.nix
     ../apps/rclone.nix
+    ../apps/op.nix
   ];
 }
