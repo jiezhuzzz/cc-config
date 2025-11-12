@@ -14,10 +14,18 @@ in {
         signingPrivateKey = {
           reference = "op://Service/Signing/private_key?ssh-format=openssh";
           path = "${homeDir}/.ssh/signing.private";
+          group =
+            if pkgs.stdenv.isLinux
+            then config.home.username
+            else "staff";
         };
         githubPrivateKey = {
           reference = "op://Service/GitHub/private_key?ssh-format=openssh";
           path = "${homeDir}/.ssh/github.private";
+          group =
+            if pkgs.stdenv.isLinux
+            then config.home.username
+            else "staff";
         };
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {
