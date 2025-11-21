@@ -1,9 +1,9 @@
 {
   programs.zellij = {
     enable = true;
-    enableFishIntegration = true;
+    # enableFishIntegration = true;
     # enableZshIntegration = true;
-    attachExistingSession = true;
+    # attachExistingSession = true;
     # exitShellOnExit = true;
     settings = {
       keybinds = {
