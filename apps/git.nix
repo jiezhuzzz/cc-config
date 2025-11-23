@@ -13,6 +13,8 @@
         st = "status";
         br = "branch";
       };
+      push.autoSetupRemote = true;
+      pull.rebase = true;
     };
     ignores = [".DS_Store" ".direnv/" ".cache/"];
     signing = {

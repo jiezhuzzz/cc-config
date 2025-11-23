@@ -118,16 +118,6 @@ e2e-create() {
             --key-name 1password \
             --nic net-id="$sharednet_id" \
             --hint reservation="$physical_reservation_id" \
-            --user-data <(cat <<EOF
-                #!/bin/bash
-                set -ex
-                export DEBIAN_FRONTEND=noninteractive
-                apt-get update -y
-                apt-get upgrade -y
-                echo "--- apt update ran ---" >> /var/log/my-cloud-init.log
-                su -l cc -c "curl -fsSL https://install.determinate.systems/nix | sh -s -- install --no-confirm --determinate"
-                EOF
-                ) \
             "$argc_name-$i"
         sleep 2
         openstack server add floating ip "$argc_name-$i" "${available_floating_ips[$(($i - 1))]}"
