@@ -27,11 +27,6 @@ openstack() {
     uvx --from python-openstackclient openstack "$@"
 }
 
-INIT_SCRIPT = "
-sudo apt
-"
-
-
 # @cmd create a lease
 # @option -n --nodes=1 number of nodes
 # @option -t --type[=compute_cascadelake_r|compute_skylake] node type
@@ -118,8 +113,8 @@ e2e-create() {
             --key-name 1password \
             --nic net-id="$sharednet_id" \
             --hint reservation="$physical_reservation_id" \
+            --wait \
             "$argc_name-$i"
-        sleep 2
         openstack server add floating ip "$argc_name-$i" "${available_floating_ips[$(($i - 1))]}"
     done
 }

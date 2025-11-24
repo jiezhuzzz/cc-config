@@ -52,6 +52,9 @@
               host.port = 2225;
             }
           ];
+          extraOptions = {
+            IPQoS = "throughput";
+          };
         };
       };
   };
