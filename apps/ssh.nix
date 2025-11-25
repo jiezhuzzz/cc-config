@@ -32,7 +32,7 @@
           user = "cc";
           identityFile = "~/.ssh/cc.private";
         };
-        "192.168.1.*" = {
+        "192.168.86.*" = {
           identityFile = "~/.ssh/personal.private";
         };
         "*" = {
