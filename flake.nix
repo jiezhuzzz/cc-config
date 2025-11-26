@@ -10,10 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +27,6 @@
     vscode-server,
     nix-homebrew,
     home-manager,
-    nixvim,
     darwin,
     disko,
     opnix,
@@ -42,7 +37,7 @@
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit username nixvim catppuccin;
+          inherit username catppuccin;
         };
         modules = [
           ./desktop
@@ -74,7 +69,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
-              nixvim.homeModules.nixvim
               catppuccin.homeModules.catppuccin
               ./home-manager/nas.nix
             ];
@@ -106,7 +100,6 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.${username}.imports = [
-              nixvim.homeModules.nixvim
               opnix.homeManagerModules.default
               catppuccin.homeModules.catppuccin
               ./home-manager/darwin.nix
@@ -127,7 +120,6 @@
       home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {system = "x86_64-linux";};
         modules = [
-          nixvim.homeModules.nixvim
           opnix.homeManagerModules.default
           catppuccin.homeModules.catppuccin
           ./home-manager/server.nix

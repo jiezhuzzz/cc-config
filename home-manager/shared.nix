@@ -90,8 +90,7 @@
     # ../apps/gitui.nix
     ../apps/fzf.nix
     ../apps/helix.nix
-    # ../apps/jujutsu.nix
-    ../apps/nixvim
+    ../apps/jujutsu.nix
     # ../apps/rclone.nix
     ../apps/zoxide.nix
     ../apps/claude.nix

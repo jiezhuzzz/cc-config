@@ -1,6 +1,5 @@
 {
   username,
-  nixvim,
   catppuccin,
   ...
 }: {
@@ -30,7 +29,6 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.${username}.imports = [
-    nixvim.homeModules.nixvim
     catppuccin.homeModules.catppuccin
     ../home-manager/desktop.nix
   ];
