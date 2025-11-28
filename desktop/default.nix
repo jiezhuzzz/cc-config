@@ -22,6 +22,7 @@
       "video"
       "audio"
     ];
+    hashedPassword = "$6$UusJ/PWR6vBBreNd$NmelAVRZe.3OXrcPWgnkX7/Bf/E7PS9sxN.gtr/GQx7WdSz3n6x314E6QgiK.c9.nrYccFQIotwqIGedtA8AC1";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxEzB8rb/S0bPaTymoXEj0OFj7FXy2XTapYXLJBMBkj"
     ];
