@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   imports = [
     ./hardware/auto-gen.nix
     ./hardware/partition.nix
