@@ -13,7 +13,6 @@
 
   imports = [
     ./shared.nix
-    ../apps/ghostty.nix
     ../apps/oh-my-posh.nix
   ];
 }

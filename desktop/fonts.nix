@@ -4,6 +4,6 @@
     nerd-fonts.fira-code
     nerd-fonts.hack
     source-han-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
   ];
 }
