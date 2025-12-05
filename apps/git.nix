@@ -1,4 +1,11 @@
 {
+  lib,
+  config,
+  ...
+}: let
+  # Check if we're in a codespace environment
+  isCodespace = config.home.username == "vscode";
+in {
   programs.git = {
     enable = true;
     settings = {
@@ -17,7 +24,7 @@
       pull.rebase = true;
     };
     ignores = [".DS_Store" ".direnv/" ".cache/"];
-    signing = {
+    signing = lib.mkIf (!isCodespace) {
       format = "ssh";
       key = "~/.ssh/signing.private";
       signByDefault = true;

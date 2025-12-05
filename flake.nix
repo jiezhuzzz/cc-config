@@ -128,6 +128,18 @@
           inherit username homeDir;
         };
       };
+
+    mkCodespaceConfig = username: homeDir:
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {system = "x86_64-linux";};
+        modules = [
+          catppuccin.homeModules.catppuccin
+          ./home-manager/codespace.nix
+        ];
+        extraSpecialArgs = {
+          inherit username homeDir;
+        };
+      };
   in
     flake-utils.lib.eachDefaultSystem (
       system: let
@@ -147,6 +159,7 @@
       };
 
       homeConfigurations = {
+        space = mkCodespaceConfig "vscode" "/home/vscode";
         cc = mkServerConfig "cc" "/home/cc";
         goku = mkServerConfig "jiezzz" "/zp_goku/scratch_sb/jiezzz";
         vegeta = mkServerConfig "jiezzz" "/zp_vegeta/scratch_sb/jiezzz";

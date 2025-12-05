@@ -44,10 +44,17 @@
   services.openssh = {
     enable = true;
   };
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [
+      "root"
+      "@wheel"
+      username
+    ];
+  };
   nixpkgs.config.allowUnfree = true;
 
   services.vscode-server.enable = true;
