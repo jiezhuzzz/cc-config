@@ -14,6 +14,7 @@
       "iina"
       "lunar"
       "zen"
+      "thebrowsercompany-dia"
       "zoom"
       "zotero"
       "homerow"

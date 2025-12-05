@@ -74,6 +74,10 @@
           run = "move-node-to-workspace W";
         }
         {
+          "if".app-id = "company.thebrowser.dia";
+          run = "move-node-to-workspace W";
+        }
+        {
           "if".app-id = "app.zen-browser.zen";
           run = "move-node-to-workspace W";
         }

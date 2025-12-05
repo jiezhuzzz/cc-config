@@ -4,6 +4,7 @@
     enableZshIntegration = true;
     # enableFishIntegration = true; # read-only, always set to true
     nix-direnv.enable = true;
+    mise.enable = true;
     config = {
       global.load_dotenv = true;
       global.warn_timeout = 0;

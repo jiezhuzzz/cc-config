@@ -26,6 +26,7 @@
     uv
     quarto
     just
+    devenv
     typst
     nodejs
     # LSP
@@ -87,7 +88,7 @@
     ../apps/yazi.nix
     ../apps/git.nix
     ../apps/delta.nix
-    ../apps/gitui.nix
+    # ../apps/gitui.nix
     ../apps/fzf.nix
     ../apps/helix.nix
     ../apps/jujutsu.nix
