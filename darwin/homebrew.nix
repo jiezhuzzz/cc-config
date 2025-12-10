@@ -23,7 +23,7 @@
       # "bartender"
       # "ghostty"
       "pronotes"
-      "visual-studio-code"
+      # "visual-studio-code"
       "pika"
       "pdf-expert"
       "adguard"

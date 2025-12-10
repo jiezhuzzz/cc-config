@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
@@ -39,10 +38,9 @@
           "ms-vscode-remote.remote-ssh"
           "github.codespaces"
           "github.vscode-github-actions"
-          "kend.dancehelixkey"
           "mechatroner.rainbow-csv"
           "streetsidesoftware.code-spell-checker"
-          "wayou.vscode-todo-highlight"
+          # "wayou.vscode-todo-highlight"
         ];
         userMcp = {
         };
@@ -53,25 +51,32 @@
           "search.showLineNumbers" = true;
           "search.smartCase" = true;
 
-          # editor
+          # Editor
           "editor.fontFamily" = "JetBrainsMonoNL Nerd Font Mono";
           "editor.fontSize" = 16;
           "editor.formatOnSave" = true;
           "editor.inlayHints.enabled" = "offUnlessPressed";
           "editor.cursorSmoothCaretAnimation" = "on";
+          "editor.cursorBlinking" = "smooth";
           "editor.foldingImportsByDefault" = true;
           "editor.showFoldingControls" = "always";
-          "editor.stickyScroll.enabled" = true;
 
           # UI
           "window.commandCenter" = false;
           "explorer.compactFolders" = false;
-          # "explorer.decorations.badges" = false;
-          # "explorer.decorations.colors" = false;
           "explorer.sortOrder" = "type";
           "workbench.activityBar.location" = "top";
+          "workbench.panel.showLabels" = false;
 
           "github.gitProtocol" = "ssh";
+          "git.confirmSync" = false;
+          "git.autofetch" = true;
+
+          # Zen Mode
+          "zenMode.centerLayout" = false;
+          "zenMode.fullScreen" = false;
+          "zenMode.hideLineNumbers" = false;
+          "zenMode.showTabs" = "none";
 
           # Python
           "[python]" = {
@@ -84,9 +89,25 @@
           # Nix
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nil";
-          "nix.formatterPath" = "alejandra";
+          "nix.serverSettings" = {
+            "nil" = {
+              "formatting" = {
+                "command" = ["alejandra"];
+              };
+            };
+          };
           # C/C++
           "C_Cpp.intelliSenseEngine" = "disabled";
+
+          # Code Spell
+          "cSpell.allowCompoundWords" = true;
+          "cSpell.enabledFileTypes" = {
+            "*" = true;
+            "markdown" = true;
+            "nix" = false;
+          };
+
+          "geminicodeassist.project" = "substantial-appliance-h2bpq";
         };
       };
     };
