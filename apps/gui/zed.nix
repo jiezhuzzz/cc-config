@@ -17,6 +17,7 @@
       soft_wrap = "editor_width";
       autosave = "on_focus_change";
       use_smartcase_search = true;
+      colorize_brackets = true;
       # LSP
       languages = {
         Nix = {

@@ -99,6 +99,8 @@
             system.configurationRevision = self.rev or self.dirtyRev or null;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.overwriteBackup = true;
+            home-manager.backupFileExtension = "old";
             home-manager.users.${username}.imports = [
               opnix.homeManagerModules.default
               catppuccin.homeModules.catppuccin
