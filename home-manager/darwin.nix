@@ -13,7 +13,7 @@
     ../apps/gui/zed.nix
     ../apps/gui/obsidian/default.nix
     ../apps/gui/anki.nix
-    # ../apps/gui/wezterm.nix
+    ../apps/gui/vscode.nix
     ../apps/gui/ghostty.nix
     ../apps/fish.nix
     ../apps/starship.nix

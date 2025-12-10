@@ -1,10 +1,6 @@
 {pkgs, ...}
 : {
   security.pam.services.sudo_local.touchIdAuth = true;
-  nixpkgs = {
-    config.allowUnfree = true;
-    # hostPlatform = "aarch64-darwin";
-  };
   nix.gc = {
     automatic = true;
     interval = [{Weekday = 2;}];

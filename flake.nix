@@ -3,6 +3,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+    nix4vscode = {
+      url = "github:nix-community/nix4vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     opnix.url = "github:brizzbuzz/opnix";
     catppuccin.url = "github:catppuccin/nix";
@@ -27,6 +31,7 @@
     vscode-server,
     nix-homebrew,
     home-manager,
+    nix4vscode,
     darwin,
     disko,
     opnix,
@@ -85,6 +90,10 @@
         system = "aarch64-darwin";
         modules = [
           {
+            nixpkgs.overlays = [
+              nix4vscode.overlays.default
+            ];
+            nixpkgs.config.allowUnfree = true;
             users.users.${username} = {
               name = username;
               home = "/Users/${username}";
