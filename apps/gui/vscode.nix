@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
@@ -14,19 +15,34 @@
           "ms-python.python"
           "ms-python.debugpy"
           "charliermarsh.ruff"
+          "ms-python.vscode-pylance"
           # "astral-sh.ty"
           # Rust
           "rust-lang.rust-analyzer"
+          # C/C++
+          "ms-vscode.cpptools"
+          "ms-vscode.cmake-tools"
+          "llvm-vs-code-extensions.vscode-clangd"
+          # config languages
+          "redhat.vscode-yaml"
+          "tamasfe.even-better-toml"
           # container
           "ms-azuretools.vscode-containers"
           "ms-vscode-remote.remote-containers"
           # agent
           "github.copilot"
+          "github.copilot-chat"
           "anthropic.claude-code"
           "google.geminicodeassist"
           "openai.chatgpt"
           # other
           "ms-vscode-remote.remote-ssh"
+          "github.codespaces"
+          "github.vscode-github-actions"
+          "kend.dancehelixkey"
+          "mechatroner.rainbow-csv"
+          "streetsidesoftware.code-spell-checker"
+          "wayou.vscode-todo-highlight"
         ];
         userMcp = {
         };
@@ -65,6 +81,12 @@
               "source.fixAll" = "explicit";
             };
           };
+          # Nix
+          "nix.enableLanguageServer" = true;
+          "nix.serverPath" = "nil";
+          "nix.formatterPath" = "alejandra";
+          # C/C++
+          "C_Cpp.intelliSenseEngine" = "disabled";
         };
       };
     };
