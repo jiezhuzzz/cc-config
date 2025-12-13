@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    mutableExtensionsDir = false;
+    # mutableExtensionsDir = false;
     profiles = {
       default = {
         enableExtensionUpdateCheck = false;
@@ -21,6 +21,7 @@
           # C/C++
           "ms-vscode.cpptools"
           "ms-vscode.cmake-tools"
+          "ms-vscode.makefile-tools"
           "llvm-vs-code-extensions.vscode-clangd"
           # config languages
           "redhat.vscode-yaml"
@@ -61,12 +62,20 @@
           "editor.foldingImportsByDefault" = true;
           "editor.showFoldingControls" = "always";
 
+          # Terminal
+          "terminal.integrated.suggest.enabled" = false;
+          "terminal.integrated.lineHeight" = 1.2;
+
           # UI
           "window.commandCenter" = false;
+          "window.title" = "\${rootName}";
           "explorer.compactFolders" = false;
           "explorer.sortOrder" = "type";
           "workbench.activityBar.location" = "top";
           "workbench.panel.showLabels" = false;
+          "workbench.statusBar.visible" = false;
+          "workbench.layoutControl.enabled" = false;
+          "breadcrumbs.enabled" = false;
 
           "github.gitProtocol" = "ssh";
           "git.confirmSync" = false;
@@ -86,6 +95,7 @@
               "source.fixAll" = "explicit";
             };
           };
+          "python.analysis.typeCheckingMode" = "standard";
           # Nix
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nil";
@@ -108,6 +118,7 @@
           };
 
           "geminicodeassist.project" = "substantial-appliance-h2bpq";
+          "redhat.telemetry.enabled" = false;
         };
       };
     };
