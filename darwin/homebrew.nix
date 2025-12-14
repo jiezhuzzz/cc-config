@@ -55,9 +55,9 @@
       "SnippetsLab" = 1006087419;
       "Noir" = 1592917505;
       "Immersive Translate" = 6447957425;
-      "Affinity Designer 2" = 1616831348;
-      "Affinity Photo 2" = 1616822987;
-      "Affinity Publisher 2" = 1606941598;
+      # "Affinity Designer 2" = 1616831348;
+      # "Affinity Photo 2" = 1616822987;
+      # "Affinity Publisher 2" = 1606941598;
       "CloudMounter" = 1130254674;
       # "TypeIt4Me 7" = 6474688391;
     };
