@@ -119,6 +119,7 @@
 
           "geminicodeassist.project" = "substantial-appliance-h2bpq";
           "redhat.telemetry.enabled" = false;
+          "editor.accessibilitySupport" = "off";
         };
       };
     };

@@ -1,0 +1,5 @@
+{
+  programs.himalaya = {
+    enable = true;
+  };
+}

@@ -19,5 +19,6 @@
     ../apps/starship.nix
     ../apps/rclone.nix
     ../apps/op.nix
+    # ../apps/himalaya.nix
   ];
 }
