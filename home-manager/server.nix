@@ -3,7 +3,10 @@
   username,
   homeDir,
   ...
-}: {
+}: let
+  apps = import ../apps;
+  inherit (apps) dev prod;
+in {
   home.username = username;
 
   home.homeDirectory = homeDir;
@@ -19,10 +22,10 @@
 
   imports = [
     ./shared.nix
-    ../apps/oh-my-posh.nix
-    ../apps/podman.nix
-    ../apps/shpool.nix
-    ../apps/op.nix
-    ../apps/ssh.nix
+    prod.oh-my-posh
+    dev.podman
+    dev.shpool
+    prod.op
+    prod.ssh
   ];
 }

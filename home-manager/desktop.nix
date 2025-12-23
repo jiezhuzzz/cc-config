@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  apps = import ../apps;
+  inherit (apps) prod;
+in {
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
@@ -13,6 +16,6 @@
 
   imports = [
     ./shared.nix
-    ../apps/oh-my-posh.nix
+    prod.oh-my-posh
   ];
 }

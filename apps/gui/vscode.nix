@@ -43,8 +43,6 @@
           "streetsidesoftware.code-spell-checker"
           # "wayou.vscode-todo-highlight"
         ];
-        userMcp = {
-        };
         userSettings = {
           "chat.mcp.gallery.enabled" = true;
           "files.autoSave" = "afterDelay";
@@ -71,11 +69,14 @@
           "window.title" = "\${rootName}";
           "explorer.compactFolders" = false;
           "explorer.sortOrder" = "type";
+          "explorer.confirmDragAndDrop" = false;
           "workbench.activityBar.location" = "top";
           "workbench.panel.showLabels" = false;
           "workbench.statusBar.visible" = false;
           "workbench.layoutControl.enabled" = false;
           "breadcrumbs.enabled" = false;
+          "terminal.integrated.cursorStyle" = "line";
+          "claudeCode.preferredLocation" = "sidebar";
 
           "github.gitProtocol" = "ssh";
           "git.confirmSync" = false;

@@ -1,10 +1,13 @@
-{
+let
+  apps = import ../apps;
+  inherit (apps) prod;
+in {
   # home.packages = with pkgs; [
   #   shpool
   # ];
 
   imports = [
     ./shared.nix
-    ../apps/oh-my-posh.nix
+    prod.oh-my-posh
   ];
 }

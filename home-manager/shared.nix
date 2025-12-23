@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  apps = import ../apps;
+  inherit (apps) dev prod;
+in {
   home.stateVersion = "25.11";
 
   home.preferXdgDirectories = true;
@@ -81,21 +84,21 @@
   catppuccin.flavor = "frappe";
 
   imports = [
-    ../apps/direnv.nix
-    ../apps/eza.nix
-    ../apps/zsh.nix
-    ../apps/tmux.nix
-    ../apps/yazi.nix
-    ../apps/git.nix
-    ../apps/delta.nix
-    # ../apps/gitui.nix
-    ../apps/fzf.nix
-    ../apps/helix.nix
-    ../apps/jujutsu.nix
-    # ../apps/rclone.nix
-    ../apps/zoxide.nix
-    ../apps/claude.nix
-    ../apps/codex.nix
-    ../apps/gemini.nix
+    dev.direnv
+    prod.eza
+    prod.zsh
+    prod.tmux
+    prod.yazi
+    dev.git
+    dev.delta
+    # dev.gitui
+    prod.fzf
+    dev.helix
+    dev.jujutsu
+    # prod.rclone
+    prod.zoxide
+    dev.claude
+    dev.codex
+    dev.gemini
   ];
 }
