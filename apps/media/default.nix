@@ -5,6 +5,7 @@
       ./plex.nix
       ./kavita.nix
       ./transmission.nix
+      ./jellyfin.nix
     ];
   };
 
@@ -12,4 +13,5 @@
   plex = ./plex.nix;
   kavita = ./kavita.nix;
   transmission = ./transmission.nix;
+  jellyfin = ./jellyfin.nix;
 }

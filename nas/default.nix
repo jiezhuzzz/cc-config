@@ -7,6 +7,7 @@
     ../apps/media/plex.nix
     ../apps/media/immich.nix
     ../apps/media/kavita.nix
+    ../apps/media/jellyfin.nix
   ];
   virtualisation.containers.enable = true;
   virtualisation.podman = {
