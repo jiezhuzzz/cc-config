@@ -1,7 +1,14 @@
-{
+{pkgs, ...}: {
   programs.zed-editor = {
     enable = true;
-    extensions = ["nix" "toml" "typst" "dockerfile"];
+    package = pkgs.zed-editor.overrideAttrs (old: {doCheck = false;});
+    extensions = ["nix" "toml" "typst" "dockerfile" "opencode" "typst"];
+    extraPackages = with pkgs; [
+      tinymist
+      alejandra
+    ];
+    mutableUserKeymaps = false;
+    mutableUserSettings = false;
     userSettings = {
       helix_mode = true;
       # UI
@@ -13,12 +20,12 @@
         cursor_shape = "bar";
         font_size = 12;
       };
-      # editor
+      # Editor
       soft_wrap = "editor_width";
       autosave = "on_focus_change";
       use_smartcase_search = true;
       colorize_brackets = true;
-      # LSP
+      # Languages
       languages = {
         Nix = {
           language_servers = ["nil" "!nixd" "..."];
@@ -28,6 +35,25 @@
               arguments = ["--quiet" "--"];
             };
           };
+        };
+        Python = {
+          language_servers = ["ty" "basedpyright" "..."];
+        };
+      };
+      # LSP
+      lsp = {
+        tinymist.settings = {
+          exportPdf = "onSave";
+        };
+      };
+      features = {
+        edit_prediction_provider = "copilot";
+      };
+      # Agents
+      agent = {
+        commit_message_model = {
+          provider = "openai";
+          model = "gpt-5.2";
         };
       };
     };

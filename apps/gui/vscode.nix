@@ -59,6 +59,7 @@
           "editor.cursorBlinking" = "smooth";
           "editor.foldingImportsByDefault" = true;
           "editor.showFoldingControls" = "always";
+          "editor.wordWrap" = "on";
 
           # Terminal
           "terminal.integrated.suggest.enabled" = false;
@@ -117,7 +118,9 @@
             "markdown" = true;
             "nix" = false;
           };
-
+          "cSpell.userWords" = [
+            "ktest"
+          ];
           "geminicodeassist.project" = "substantial-appliance-h2bpq";
           "redhat.telemetry.enabled" = false;
           "editor.accessibilitySupport" = "off";

@@ -20,6 +20,7 @@
       "homerow"
       "1password"
       "karabiner-elements"
+      "displaylink"
       # "bartender"
       # "ghostty"
       "pronotes"

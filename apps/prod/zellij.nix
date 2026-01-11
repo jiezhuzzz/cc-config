@@ -6,6 +6,7 @@
     # attachExistingSession = true;
     # exitShellOnExit = true;
     settings = {
+      show_startup_tips = false;
       keybinds = {
         tab = {
           "bind \"Shift Left\"" = {
