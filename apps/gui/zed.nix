@@ -56,6 +56,12 @@
           model = "gpt-5.2";
         };
       };
+      ssh_connections = [
+        {
+          host = "192.5.86.200";
+          username = "cc";
+        }
+      ];
     };
   };
 }
