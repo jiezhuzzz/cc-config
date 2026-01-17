@@ -38,6 +38,7 @@ in {
     shfmt
     argc
     prek
+    crush
     (writeShellScriptBin "chameleon" (builtins.readFile ../scripts/chameleon.sh))
     (writeShellScriptBin "pbcopy" (builtins.readFile ../scripts/pbcopy.sh))
     (writeShellScriptBin "pbpaste" (builtins.readFile ../scripts/pbpaste.sh))
@@ -100,5 +101,6 @@ in {
     dev.claude
     dev.codex
     dev.gemini
+    dev.opencode
   ];
 }

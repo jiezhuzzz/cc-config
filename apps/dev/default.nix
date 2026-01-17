@@ -11,6 +11,7 @@
       ./gitui.nix
       ./helix.nix
       ./jujutsu.nix
+      ./opencode.nix
       ./podman.nix
       ./shpool.nix
     ];
@@ -26,6 +27,7 @@
   gitui = ./gitui.nix;
   helix = ./helix.nix;
   jujutsu = ./jujutsu.nix;
+  opencode = ./opencode.nix;
   podman = ./podman.nix;
   shpool = ./shpool.nix;
 }
