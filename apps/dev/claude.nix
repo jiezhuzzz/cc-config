@@ -3,6 +3,7 @@ let
 in {
   programs.claude-code = {
     enable = true;
+    rulesDir = "${agentDir}/rules";
     skillsDir = "${agentDir}/skills";
     settings = {
       attribution = {
