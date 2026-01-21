@@ -9,6 +9,7 @@
     ];
     mutableUserKeymaps = false;
     mutableUserSettings = false;
+    mutableUserTasks = false;
     userSettings = {
       helix_mode = true;
       # UI
@@ -63,5 +64,13 @@
         }
       ];
     };
+    userTasks = [
+      {
+        label = "Run with uv";
+        command = "uv";
+        args = ["run" "$ZED_FILE"];
+        tags = ["python-module-main-method"];
+      }
+    ];
   };
 }
