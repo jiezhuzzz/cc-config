@@ -1,6 +1,8 @@
 ---
 name: smart-commit
 description: Analyze git diffs and intelligently split mixed changes into clean, logical conventional commits. Use when the user needs to organize uncommitted changes that mix multiple change types (feat, fix, refactor, chore, docs, etc.) into separate semantic commits. Handles partial file staging when a single file contains multiple change types. Triggered by requests like "split my changes into proper commits", "create semantic commits", or "organize into conventional commits".
+disable-model-invocation: true
+allowed-tools: Read, Bash(git:*)
 ---
 
 # Smart Commit
