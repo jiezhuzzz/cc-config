@@ -6,6 +6,10 @@
     interval = [{Weekday = 2;}];
     options = "--delete-older-than 3d";
   };
+  nix.settings.extra-experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   programs.fish.enable = true;
   imports = [
     ./system.nix
