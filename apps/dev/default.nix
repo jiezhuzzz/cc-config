@@ -3,6 +3,7 @@
     imports = [
       ./claude.nix
       ./codex.nix
+      ./colima.nix
       ./delta.nix
       ./direnv.nix
       ./gemini.nix
@@ -19,6 +20,7 @@
 
   claude = ./claude.nix;
   codex = ./codex.nix;
+  colima = ./colima.nix;
   delta = ./delta.nix;
   direnv = ./direnv.nix;
   gemini = ./gemini.nix;

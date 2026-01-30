@@ -1,14 +1,16 @@
 {pkgs, ...}: let
   apps = import ../apps;
-  inherit (apps) gui prod;
+  inherit (apps) gui prod dev;
 in {
   home.packages = with pkgs; [
-    container
+    # container
+    docker-client
     (writeShellScriptBin "ssh-clean" (builtins.readFile ../scripts/ssh-clean.sh))
   ];
 
   imports = [
     ./shared.nix
+    dev.colima
     gui.rio
     prod.ssh
     prod.zellij
