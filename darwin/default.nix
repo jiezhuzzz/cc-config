@@ -1,5 +1,4 @@
-{pkgs, ...}
-: {
+{
   security.pam.services.sudo_local.touchIdAuth = true;
   nix.gc = {
     automatic = true;
