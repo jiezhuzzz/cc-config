@@ -172,6 +172,7 @@
       homeConfigurations = {
         space = mkCodespaceConfig "vscode" "/home/vscode";
         cc = mkServerConfig "cc" "/home/cc";
+        orb = mkServerConfig "jie" "/home/jie";
         goku = mkServerConfig "jiezzz" "/zp_goku/scratch_sb/jiezzz";
         vegeta = mkServerConfig "jiezzz" "/zp_vegeta/scratch_sb/jiezzz";
       };
