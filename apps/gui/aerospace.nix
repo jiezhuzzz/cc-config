@@ -118,11 +118,6 @@
           run = "layout floating";
         }
       ];
-      workspace-to-monitor-force-assignment = {
-        W = "main";
-        C = "RD280U";
-        T = "PD2725U";
-      };
     };
   };
 }
