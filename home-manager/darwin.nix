@@ -17,7 +17,7 @@ in {
     gui.espanso
     gui.zed
     gui.obsidian
-    gui.anki
+    # gui.anki
     gui.vscode
     gui.ghostty
     prod.fish
