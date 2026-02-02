@@ -12,6 +12,13 @@ in {
       };
       theme = "dark";
       alwaysThinkingEnabled = true;
+      permissions.allow = [
+        # General
+        "Bash(* --version)"
+        "Bash(* --help *)"
+        # Git
+        "Bash(git *)"
+      ];
       permissions.deny = [
         "Bash(python:*)"
         "Bash(python3:*)"
