@@ -20,10 +20,14 @@ in {
         "Bash(git *)"
       ];
       permissions.deny = [
-        "Bash(python:*)"
-        "Bash(python3:*)"
-        "Bash(pip:*)"
-        "Bash(pip3:*)"
+        # Git
+        "Bash(git push *)"
+        # Python
+        "Bash(python *)"
+        "Bash(python3 *)"
+        "Bash(pip *)"
+        "Bash(pip3 *)"
+        # Secretes
         "Read(./.env)"
         "Read(./.env.*)"
         "Read(./secrets/**)"
