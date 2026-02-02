@@ -13,6 +13,13 @@
       "lipov3cz3k/zsh-uv"
     ];
     initContent = ''
+      # Load environment variables from ~/.envs
+      if [ -f ~/.envs ]; then
+        set -a
+        source ~/.envs
+        set +a
+      fi
+
       # fzf
       zhm_wrap_widget fzf-completion zhm_fzf_completion
       bindkey '^I' zhm_fzf_completion
