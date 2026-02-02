@@ -20,8 +20,6 @@ in {
         "Bash(git *)"
       ];
       permissions.deny = [
-        # Git
-        "Bash(git push *)"
         # Python
         "Bash(python *)"
         "Bash(python3 *)"
