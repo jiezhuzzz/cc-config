@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Configure remote builders for Linux systems
   nix.buildMachines = [
     {
