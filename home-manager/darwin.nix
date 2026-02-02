@@ -10,7 +10,6 @@ in {
 
   imports = [
     ./shared.nix
-    dev.colima
     gui.rio
     prod.ssh
     prod.zellij
