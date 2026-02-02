@@ -9,22 +9,22 @@
       protocol = "ssh-ng";
       sshUser = "builder";
       sshKey = "/etc/nix/builder_ed25519";
-      systems = [ "aarch64-linux" ];
+      systems = ["aarch64-linux"];
       maxJobs = 4;
       speedFactor = 1;
-      supportedFeatures = [ "kvm" "benchmark" "big-parallel" "nixos-test" ];
-      mandatoryFeatures = [ ];
+      supportedFeatures = ["kvm" "benchmark" "big-parallel" "nixos-test"];
+      mandatoryFeatures = [];
       publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUpCV2N4Yi9CbGFxdDFhdU90RStGOFFVV3JVb3RpQzVxQkorVXVFV2RWQ2Igcm9vdEBuaXhvcwo=";
     }
     {
-      # x86_64-linux remote builder (vegeta server)
-      hostName = "vegeta";
-      systems = [ "x86_64-linux" ];
-      sshUser = "jiezzz";
-      sshKey = "/Users/jie/.ssh/lab.private";
-      maxJobs = 8;  # Adjust based on vegeta's CPU cores
-      speedFactor = 2;  # Higher priority than local builder
-      supportedFeatures = [ "benchmark" "big-parallel" "nixos-test" ];
+      # x86_64-linux remote builder (192.5.86.200)
+      hostName = "192.5.86.200";
+      systems = ["x86_64-linux"];
+      sshUser = "cc";
+      sshKey = "/Users/jie/.ssh/cc.private";
+      maxJobs = 8; # Adjust based on server's CPU cores
+      speedFactor = 2; # Higher priority than local builder
+      supportedFeatures = ["benchmark" "big-parallel" "nixos-test"];
     }
   ];
 
