@@ -21,6 +21,9 @@ in {
         "Bash(git *)"
       ];
       permissions.deny = [
+        # Outdated Unix tools
+        "Bash(grep *)"
+        "Bash(find *)"
         # Python
         "Bash(python *)"
         "Bash(python3 *)"
