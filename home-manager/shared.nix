@@ -75,8 +75,6 @@ in {
     la = "eza -la";
     tree = "eza --tree";
     lzd = "lazydocker";
-    jq = "jaq";
-    grep = "rg";
     less = "ov";
     # ssh = "TERM=xterm-256color ssh";
   };
