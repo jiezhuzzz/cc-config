@@ -19,6 +19,7 @@ in {
     bottom
     jaq
     ov
+    sd
     ripgrep
     procs
     curlie
