@@ -14,6 +14,7 @@ in {
       alwaysThinkingEnabled = true;
       permissions.allow = [
         # General
+        "Bash(ls *)"
         "Bash(* --version)"
         "Bash(* --help *)"
         # Git
