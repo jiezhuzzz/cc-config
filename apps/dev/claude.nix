@@ -14,6 +14,9 @@ in {
       alwaysThinkingEnabled = true;
       permissions.allow = [
         # General
+        "Bash(fd *)"
+        "Bash(rg *)"
+        "Bash(bat *)"
         "Bash(ls *)"
         "Bash(* --version)"
         "Bash(* --help *)"
@@ -24,6 +27,7 @@ in {
         # Outdated Unix tools
         "Bash(grep *)"
         "Bash(find *)"
+        "Bash(cat *)"
         # Python
         "Bash(python *)"
         "Bash(python3 *)"
