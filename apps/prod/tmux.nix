@@ -48,6 +48,9 @@ in {
       tmux-fzf
     ];
     extraConfig = ''
+      # Disable automatic window renaming
+      set-option -g automatic-rename off
+      set-option -g allow-rename off
 
       # Configure CPU stats colors for Catppuccin
       set -g @cpu_low_fg_color "#{@thm_fg}"
