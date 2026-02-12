@@ -16,6 +16,7 @@ in {
     fd
     lazydocker
     podman-tui
+    gitui
     bottom
     jaq
     ov
