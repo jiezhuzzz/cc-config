@@ -48,49 +48,16 @@ in {
       tmux-fzf
     ];
     extraConfig = ''
-      # Disable automatic window renaming
-      set-option -g automatic-rename off
-      set-option -g allow-rename off
-
-      # Configure CPU stats colors for Catppuccin
-      set -g @cpu_low_fg_color "#{@thm_fg}"
-      set -g @cpu_medium_fg_color "#{@thm_fg}"
-      set -g @cpu_high_fg_color "#{@thm_crust}"
-      set -g @cpu_low_bg_color "#{@thm_surface_0}"
-      set -g @cpu_medium_bg_color "#{@thm_yellow}"
-      set -g @cpu_high_bg_color "#{@thm_red}"
-
-      # Configure RAM stats colors
-      set -g @ram_low_fg_color "#{@thm_fg}"
-      set -g @ram_medium_fg_color "#{@thm_fg}"
-      set -g @ram_high_fg_color "#{@thm_crust}"
-      set -g @ram_low_bg_color "#{@thm_surface_0}"
-      set -g @ram_medium_bg_color "#{@thm_peach}"
-      set -g @ram_high_bg_color "#{@thm_red}"
-
-      # Configure CPU temp colors
-      set -g @cpu_temp_low_fg_color "#{@thm_fg}"
-      set -g @cpu_temp_medium_fg_color "#{@thm_fg}"
-      set -g @cpu_temp_high_fg_color "#{@thm_crust}"
-      set -g @cpu_temp_low_bg_color "#{@thm_surface_0}"
-      set -g @cpu_temp_medium_bg_color "#{@thm_sky}"
-      set -g @cpu_temp_high_bg_color "#{@thm_red}"
-      set -g @cpu_temp_format "%2.0f°"
-
-      # CPU/RAM/Temp plugin configuration
-      set -agF status-right "#{E:@catppuccin_status_cpu}"
+      # CPU plugin configuration
+      set -gF status-right "#{E:@catppuccin_status_cpu}"
       run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
 
       # status bar
       set -g status-right-length 150
       set -g status-left-length 100
       set -g status-left ""
-      set -g status-right "#{E:@catppuccin_status_application}"
 
-      set -ag status-right "#[fg=#{@thm_blue},bg=#{@thm_surface_0}] 󰘚 #[fg=#{@thm_fg}]#{ram_percentage} "
-      set -ag status-right "#[fg=#{@thm_peach},bg=#{@thm_surface_0}] 󰔏 #[fg=#{@thm_fg}]#{cpu_temp} "
-      set -ag status-right "#{E:@catppuccin_status_session}"
-      # set -ag status-right "#{E:@catppuccin_status_uptime}"
+     set -ag status-right "#{E:@catppuccin_status_session}"
 
       # options
       set -g renumber-windows on
@@ -99,5 +66,7 @@ in {
 
   catppuccin.tmux.extraConfig = ''
     set -g @catppuccin_window_status_style "rounded"
+    set -g @catppuccin_window_text " #W"
+    set -g @catppuccin_window_current_text " #W"
   '';
 }
