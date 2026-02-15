@@ -20,6 +20,7 @@ in {
     gui.vscode
     gui.ghostty
     prod.fish
+    prod.atuin
     prod.starship
     prod.rclone
     prod.op
