@@ -7,7 +7,7 @@
     enable = true;
     enableDefaultConfig = false;
     includes = [
-      "./cc-config"
+      "~/.ssh/cc-config"
     ];
     matchBlocks =
       {
