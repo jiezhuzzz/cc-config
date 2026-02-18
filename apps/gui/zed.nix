@@ -59,7 +59,7 @@
       };
       ssh_connections = [
         {
-          host = "192.5.86.200";
+          host = "192.5.86.172";
           username = "cc";
         }
       ];
