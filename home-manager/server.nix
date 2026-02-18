@@ -27,5 +27,6 @@ in {
     dev.shpool
     prod.op
     prod.ssh
+    prod.atuin
   ];
 }
