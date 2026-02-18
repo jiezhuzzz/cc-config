@@ -31,6 +31,7 @@
         "192.5.86.* 192.5.87.*" = {
           user = "cc";
           identityFile = "~/.ssh/cc.private";
+          strictHostKeyChecking = "accept-new";
         };
         "192.168.86.*" = {
           identityFile = "~/.ssh/personal.private";
