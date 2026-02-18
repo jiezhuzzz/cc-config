@@ -9,7 +9,7 @@
 in {
   home.username = username;
 
-  # home.homeDirectory = homeDir;
+  home.homeDirectory = homeDir;
 
   # Server specific packages
   home.packages = with pkgs; [
