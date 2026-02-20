@@ -27,6 +27,7 @@
       "figma"
       "plex"
       "wakatime"
+      "rustdesk"
     ];
     masApps = {
       "WeChat" = 836500024;
