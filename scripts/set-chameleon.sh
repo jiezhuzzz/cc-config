@@ -15,8 +15,8 @@ for ip in "${argc_ips[@]}"; do
     ssh cc@"$ip" -- "curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm"
     # install configuration
     ssh cc@"$ip" -- "nix run nixpkgs#home-manager -- switch --flake github:jiezhuzzz/cc-config#cc"
-    ssh cc@"$ip" -- "sudo echo 'trusted-users = root cc' >> /etc/nix/nix.custom.conf"
     # set up the terminfo
     infocmp -x xterm-ghostty | ssh cc@"$ip" -- tic -x -
+    ssh cc@"$ip" -- "sudo echo 'trusted-users = root cc' >> /etc/nix/nix.custom.conf"
     echo "Finished setting up $ip"
 done
