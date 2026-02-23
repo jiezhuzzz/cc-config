@@ -28,6 +28,7 @@
       "plex"
       "wakatime"
       "rustdesk"
+      "bambu-studio"
     ];
     masApps = {
       "WeChat" = 836500024;
