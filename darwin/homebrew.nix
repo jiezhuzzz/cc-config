@@ -29,6 +29,7 @@
       "wakatime"
       "rustdesk"
       "bambu-studio"
+      "orbstack"
     ];
     masApps = {
       "WeChat" = 836500024;
