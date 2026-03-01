@@ -8,7 +8,7 @@
       alejandra
     ];
     mutableUserKeymaps = false;
-    mutableUserSettings = false;
+    mutableUserSettings = true;
     mutableUserTasks = false;
     userSettings = {
       helix_mode = true;
