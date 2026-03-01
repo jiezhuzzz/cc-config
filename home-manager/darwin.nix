@@ -13,11 +13,11 @@ in {
     gui.rio
     prod.ssh
     prod.zellij
-    gui.espanso
+    # gui.espanso
     gui.zed
-    gui.obsidian
+    #gui.obsidian
     # gui.anki
-    gui.vscode
+    # gui.vscode
     gui.ghostty
     prod.fish
     prod.atuin
