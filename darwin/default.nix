@@ -11,6 +11,6 @@
     ./launchd.nix
     ./fonts.nix
     ./homebrew.nix
-    ../apps/gui/aerospace.nix
+    #../apps/gui/aerospace.nix
   ];
 }
