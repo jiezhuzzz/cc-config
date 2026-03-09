@@ -15,7 +15,7 @@ in {
     prod.zellij
     # gui.espanso
     gui.zed
-    #gui.obsidian
+    gui.obsidian
     # gui.anki
     # gui.vscode
     gui.ghostty

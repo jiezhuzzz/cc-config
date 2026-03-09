@@ -47,8 +47,8 @@
           exportPdf = "onSave";
         };
       };
-      features = {
-        edit_prediction_provider = "copilot";
+      edit_predictions = {
+        provider = "copilot";
       };
       # Agents
       agent = {
