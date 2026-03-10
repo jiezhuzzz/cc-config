@@ -5,7 +5,6 @@ in {
   home.packages = with pkgs; [
     # container
     # orbstack
-    (writeShellScriptBin "ssh-clean" (builtins.readFile ../scripts/ssh-clean.sh))
   ];
 
   imports = [
