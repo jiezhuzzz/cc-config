@@ -3,44 +3,44 @@ let
 in {
   programs.claude-code = {
     enable = true;
-    rulesDir = "${agentDir}/rules";
-    skillsDir = "${agentDir}/skills";
-    settings = {
-      attribution = {
-        commit = "";
-        pr = "";
-      };
-      theme = "dark";
-      alwaysThinkingEnabled = true;
-      permissions.allow = [
-        # General
-        "Bash(fd *)"
-        "Bash(rg *)"
-        "Bash(bat *)"
-        "Bash(ls *)"
-        "Bash(* --version)"
-        "Bash(* --help *)"
-        # Git
-        "Bash(git *)"
-      ];
-      permissions.deny = [
-        # Outdated Unix tools
-        "Bash(grep *)"
-        "Bash(find *)"
-        "Bash(cat *)"
-        # Python
-        "Bash(python *)"
-        "Bash(python3 *)"
-        "Bash(pip *)"
-        "Bash(pip3 *)"
-        # Secretes
-        "Read(./.env)"
-        "Read(./.env.*)"
-        "Read(./secrets/**)"
-        "Read(./config/credentials.json)"
-        "Read(./build)"
-      ];
-      model = "opusplan";
-    };
+    # rulesDir = "${agentDir}/rules";
+    # skillsDir = "${agentDir}/skills";
+    # settings = {
+    #   attribution = {
+    #     commit = "";
+    #     pr = "";
+    #   };
+    #   theme = "dark";
+    #   alwaysThinkingEnabled = true;
+    #   permissions.allow = [
+    #     # General
+    #     "Bash(fd *)"
+    #     "Bash(rg *)"
+    #     "Bash(bat *)"
+    #     "Bash(ls *)"
+    #     "Bash(* --version)"
+    #     "Bash(* --help *)"
+    #     # Git
+    #     "Bash(git *)"
+    #   ];
+    #   permissions.deny = [
+    #     # Outdated Unix tools
+    #     "Bash(grep *)"
+    #     "Bash(find *)"
+    #     "Bash(cat *)"
+    #     # Python
+    #     "Bash(python *)"
+    #     "Bash(python3 *)"
+    #     "Bash(pip *)"
+    #     "Bash(pip3 *)"
+    #     # Secretes
+    #     "Read(./.env)"
+    #     "Read(./.env.*)"
+    #     "Read(./secrets/**)"
+    #     "Read(./config/credentials.json)"
+    #     "Read(./build)"
+    #   ];
+    #   model = "opusplan";
+    # };
   };
 }
