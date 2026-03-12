@@ -16,6 +16,11 @@
           user = "git";
           identityFile = "~/.ssh/github.private";
         };
+        "codeberg.org" = {
+          hostname = "codeberg.org";
+          user = "git";
+          identityFile = "~/.ssh/codeberg.private";
+        };
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {
         "uchicago" = {
