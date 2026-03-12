@@ -25,6 +25,14 @@
             then config.home.username
             else "staff";
         };
+        codebergPrivateKey = {
+          reference = "op://SSH/Codeberg/private_key?ssh-format=openssh";
+          path = ".ssh/codeberg.private";
+          group =
+            if pkgs.stdenv.isLinux
+            then config.home.username
+            else "staff";
+        };
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {
         sshPrivateKey = {
