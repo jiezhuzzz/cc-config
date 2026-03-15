@@ -24,6 +24,9 @@ for ip in "$@"; do
   # System update and install podman dependencies
   ssh cc@"$ip" 'sudo apt update && sudo apt upgrade -y && sudo apt install -y uidmap'
 
+  # Allow unprivileged user namespaces (required for podman rootless)
+  ssh cc@"$ip" 'sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 && echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/99-userns.conf'
+
   # Install Nix
   ssh cc@"$ip" 'curl --proto "=https" --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm'
 

@@ -96,7 +96,7 @@ After floating IPs are attached and SSH is working, use the setup script:
 <skill-base-dir>/scripts/setup-instance.sh <ip1> <ip2> ...
 ```
 
-This script handles per-instance: stale host key removal, env/op-token copy, Ghostty terminfo, apt update/upgrade, uidmap install, and Nix install. Run instances in parallel as background tasks.
+This script handles per-instance: stale host key removal, env/op-token copy, Ghostty terminfo, apt update/upgrade, uidmap install, AppArmor unprivileged userns fix (required for rootless podman), and Nix install. Run instances in parallel as background tasks.
 
 ## Quick Reference
 
