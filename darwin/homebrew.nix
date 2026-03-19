@@ -11,7 +11,7 @@
       "keka"
       "kekaexternalhelper"
       "iina"
-      "lunar"
+      # "lunar"
       "zen"
       "thebrowsercompany-dia"
       "zoom"
@@ -22,7 +22,7 @@
       "pdf-expert"
       "adguard"
       "hazel"
-      "nx-studio"
+      # "nx-studio"
       "cleanshot"
       "figma"
       "plex"
@@ -31,12 +31,13 @@
       "bambu-studio"
       "orbstack"
       "blender"
+      "cmux"
     ];
     masApps = {
       "WeChat" = 836500024;
       "CotEditor" = 1024640650;
       "Tampermonkey" = 6738342400;
-      "Pixelmator Pro" = 1289583905;
+      "Pixelmator Pro" = 6746662575;
       "Infuse" = 1136220934;
       "Amphetamine" = 937984704;
       # "Bear" = 1091189122;

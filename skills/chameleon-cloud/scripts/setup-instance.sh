@@ -22,7 +22,7 @@ for ip in "$@"; do
   infocmp -x xterm-ghostty | ssh cc@"$ip" -- tic -x -
 
   # System update and install podman dependencies
-  ssh cc@"$ip" 'sudo apt update && sudo apt upgrade -y && sudo apt install -y uidmap'
+  ssh cc@"$ip" 'sudo apt update && sudo apt upgrade -y && sudo apt install -y uidmap podman slirp4netns'
 
   # Allow unprivileged user namespaces (required for podman rootless)
   ssh cc@"$ip" 'sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 && echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/99-userns.conf'
