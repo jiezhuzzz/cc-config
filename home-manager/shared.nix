@@ -14,8 +14,7 @@ in {
     fastfetch
     bat
     fd
-    lazydocker
-    podman-tui
+    oxker
     gitui
     bottom
     jaq
@@ -68,14 +67,10 @@ in {
 
   home.shellAliases = {
     g = "git";
-    v = "nvim";
-    vim = "nvim";
-    vi = "nvim";
     ls = "eza";
     ll = "eza -l";
     la = "eza -la";
     tree = "eza --tree";
-    lzd = "lazydocker";
     less = "ov";
     # ssh = "TERM=xterm-256color ssh";
   };

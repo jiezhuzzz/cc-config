@@ -15,21 +15,16 @@ END_DATE="${4:?Missing end date (e.g. '2026-03-15 00:00')}"
 POLL_INTERVAL=5
 TIMEOUT=120
 
-echo "Fetching public network ID..."
-public_net_id=$("$CHI" openstack network show public -c id -f value)
-
 echo "Creating lease '$LEASE_NAME'..."
 echo "  Node type: $NODE_TYPE"
 echo "  Count: $COUNT"
 echo "  End date: $END_DATE"
-echo "  Public network: $public_net_id"
 
 # NOTE: chi.sh uses exec, so lease-create must run in a subshell to avoid
 # replacing the parent process. The subshell lets output print to stdout
 # while the parent script continues to the polling loop.
 ("$CHI" blazar lease-create \
   --reservation "min=$COUNT,max=$COUNT,resource_type=physical:host,resource_properties=[\"=\",\"\$node_type\",\"$NODE_TYPE\"]" \
-  --reservation "resource_type=virtual:floatingip,network_id=$public_net_id,amount=$COUNT" \
   --end-date "$END_DATE" \
   "$LEASE_NAME")
 

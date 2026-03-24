@@ -21,12 +21,9 @@
           user = "git";
           identityFile = "~/.ssh/codeberg.private";
         };
-        "192.5.86.* 192.5.87.*" = {
+        "192.5.87.16 129.114.108.248" = {
           user = "cc";
           identityFile = "~/.ssh/cc.private";
-          extraOptions = {
-            StrictHostKeyChecking = "accept-new";
-          };
         };
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {

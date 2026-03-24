@@ -1,11 +1,11 @@
 ---
 name: chameleon-cloud
-description: Use when managing Chameleon Cloud resources - creating leases, reservations, launching bare metal instances, managing networks, floating IPs, or any openstack/blazar CLI operations on CHI@UC
+description: Use when managing Chameleon Cloud resources - creating leases, reservations, launching bare metal instances, managing networks, floating IPs, or any openstack/blazar CLI operations on CHI@UC or CHI@TACC
 ---
 
 # Chameleon Cloud Management
 
-Manage bare metal reservations and instances on Chameleon Cloud (CHI@UC) via CLI.
+Manage bare metal reservations and instances on Chameleon Cloud (CHI@UC or CHI@TACC) via CLI.
 **Assume `jaq` is installed.** Use `-f json` with blazar/openstack and pipe through `jaq` to extract fields.
 
 ## CLI Wrapper
@@ -13,9 +13,10 @@ Manage bare metal reservations and instances on Chameleon Cloud (CHI@UC) via CLI
 All commands use the `chi` wrapper script at `scripts/chi.sh` relative to this skill's base directory.
 
 **Before running any commands:**
-1. Ask the user for `OS_PASSWORD` interactively. Never store or hardcode it.
-2. Export it: `export OS_PASSWORD="<password>"`
-3. Set the wrapper path: `CHI="<skill-base-dir>/scripts/chi.sh"` (use the absolute path from the skill's base directory)
+1. Ask the user which site: **UC** (`CHI@UC`) or **TACC** (`CHI@TACC`).
+2. Ask the user for `OS_PASSWORD` interactively. Never store or hardcode it.
+3. Export both: `export OS_PASSWORD="<password>" CHI_SITE="uc"` (or `"tacc"`)
+4. Set the wrapper path: `CHI="<skill-base-dir>/scripts/chi.sh"` (use the absolute path from the skill's base directory)
 
 Then run commands as:
 ```bash
@@ -23,14 +24,24 @@ $CHI blazar <args...>
 $CHI openstack <args...>
 ```
 
-**IMPORTANT:** Prefix all `blazar` and `openstack` commands below with `$CHI`. Combine `export OS_PASSWORD` and `CHI=` with each command using inline env vars or a single export block at the start of the session.
+**IMPORTANT:** Prefix all `blazar` and `openstack` commands below with `$CHI`. Combine `export OS_PASSWORD`, `CHI_SITE`, and `CHI=` with each command using inline env vars or a single export block at the start of the session. The `CHI_SITE` env var selects the site (`uc` or `tacc`, defaults to `uc`).
 
 ## Supported Node Types
+
+**CHI@UC:**
 
 | Label | node_type value |
 |-------|-----------------|
 | Skylake | `compute_skylake` |
 | Cascade Lake | `compute_cascadelake_r` |
+
+**CHI@TACC:**
+
+| Label | node_type value |
+|-------|-----------------|
+| Skylake | `compute_skylake` |
+| Cascade Lake | `compute_cascadelake` |
+| Cascade Lake R | `compute_cascadelake_r` |
 
 ## Reservation Workflow (MUST FOLLOW)
 
@@ -66,7 +77,7 @@ Run the lease creation script. It gets the public network ID, creates the lease 
 <skill-base-dir>/scripts/create-lease.sh <name> <node-type> <count> "<end-date>"
 ```
 
-Requires `OS_PASSWORD` env var. Omits `--start-date` to start immediately. Always includes floating IPs (1 per node).
+Requires `OS_PASSWORD` env var. Omits `--start-date` to start immediately. No floating IP reservation — a pre-existing IP is reused.
 
 ### Step 5: Launch Instances
 
@@ -78,22 +89,35 @@ Use the batch launch script. It launches in batches of 2 (system concurrency lim
 
 Requires `OS_PASSWORD` env var. Instances are named `<lease-name>-1`, `<lease-name>-2`, etc. Bare metal takes ~10-15 min per batch.
 
-### Step 6: Attach Floating IPs
+### Step 6: Attach Floating IP
 
-After instances are ACTIVE, run the attach script. It finds floating IPs by reservation tag and attaches them, then verifies with server list.
+After instances are ACTIVE, run the attach script. It attaches the site's pre-existing floating IP to `<lease-name>-1` (bastion host pattern).
+
+| Site | Floating IP |
+|------|-------------|
+| CHI@UC | `192.5.87.161` |
+| CHI@TACC | `129.114.108.248` |
 
 ```bash
 <skill-base-dir>/scripts/attach-floating-ips.sh <lease-name>
 ```
 
-Requires `OS_PASSWORD` env var. SSH: `ssh cc@<floating-ip>`
+Requires `OS_PASSWORD` and `CHI_SITE` env vars. The script detaches the IP from any previous server before attaching.
+
+SSH access:
+- **Bastion (first node):** `ssh cc@<floating-ip>`
+- **Other nodes:** `ssh -J cc@<floating-ip> cc@<private-ip>`
 
 ### Step 7: Post-Instance Setup
 
-After floating IPs are attached and SSH is working, use the setup script:
+After the floating IP is attached and SSH is working, use the setup script. For the bastion node, pass the floating IP directly. For other nodes, pass their private IPs with `SSH_JUMP` set to the bastion:
 
 ```bash
-<skill-base-dir>/scripts/setup-instance.sh <ip1> <ip2> ...
+# Bastion (first node)
+<skill-base-dir>/scripts/setup-instance.sh <floating-ip>
+
+# Other nodes (via SSH jump)
+SSH_JUMP=cc@<floating-ip> <skill-base-dir>/scripts/setup-instance.sh <private-ip1> <private-ip2> ...
 ```
 
 This script handles per-instance: stale host key removal, env/op-token copy, Ghostty terminfo, apt update/upgrade, uidmap install, AppArmor unprivileged userns fix (required for rootless podman), and Nix install. Run instances in parallel as background tasks.

@@ -48,19 +48,19 @@ in {
       tmux-fzf
     ];
     extraConfig = ''
-      # CPU plugin configuration
-      set -gF status-right "#{E:@catppuccin_status_cpu}"
-      run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
+       # CPU plugin configuration
+       set -gF status-right "#{E:@catppuccin_status_cpu}"
+       run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
 
-      # status bar
-      set -g status-right-length 150
-      set -g status-left-length 100
-      set -g status-left ""
+       # status bar
+       set -g status-right-length 150
+       set -g status-left-length 100
+       set -g status-left ""
 
-     set -ag status-right "#{E:@catppuccin_status_session}"
+      set -ag status-right "#{E:@catppuccin_status_session}"
 
-      # options
-      set -g renumber-windows on
+       # options
+       set -g renumber-windows on
     '';
   };
 
