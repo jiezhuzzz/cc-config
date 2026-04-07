@@ -14,7 +14,7 @@ in {
     fastfetch
     bat
     fd
-    oxker
+    #oxker
     gitui
     bottom
     jaq
